@@ -22,4 +22,6 @@ git update-ref refs/heads/release $commit || exit 1
 
 git reset --hard HEAD
 
-echo "successfully build branch release. you'll need to push release"
+git push origin release:release
+
+echo "successfully build branch release and pushed to origin release branch."
