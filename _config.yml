@@ -1,9 +1,9 @@
 # ----
 # Site
 
-title: ATD 文档中心
+title: ATD文档中心
 url: "https://juhe.baishancloud.com"
-baseurl:
+baseurl: "/docs"
 google_analytics_key:
 show_full_navigation: true
 
