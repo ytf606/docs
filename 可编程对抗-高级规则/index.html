@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/docs/css/main.css">
+		<link rel="apple-touch-icon" href="/docs/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/docs/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/docs/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/docs/"><img src="/docs/images/emblem.svg" width="40" height="40" alt="ATD文档中心 logo"></a>
+				ATD文档中心
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+			<!--
+			<form action="/docs/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="搜索" autofocus>
+				<input type="submit" value="search" style="display: none;">
+			</form>
+		-->
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/docs/">ATD新手入门文档</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE/">高级计算模式的策略设置</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">高级搜索说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%87%A0%E7%A7%8D%E6%8E%A8%E6%97%A5%E5%BF%97%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D/">几种推日志方式介绍</a></li>
+					
+						<li class="nav-item current"><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97-%E9%AB%98%E7%BA%A7%E8%A7%84%E5%88%99/">可编程对抗-高级规则</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97%E6%A8%A1%E5%9E%8B%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">可编程对抗模型说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BD%AE%E8%AF%A2%E5%91%A8%E6%9C%9F%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">轮询周期使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%86%85%E7%BD%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">内网自定义处理接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/">日志配置文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">算法模型开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6%E5%AF%B9%E6%8E%A5%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">微信告警对接操作文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">运行环境自动调整接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%89%A7%E8%A1%8C%E5%8A%A8%E4%BD%9C%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">执行动作使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%99%BA%E8%83%BD%E6%97%A5%E5%BF%97%E8%A7%A3%E6%9E%90/">智能日志解析</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%B5%84%E4%BA%A7%E5%8F%91%E7%8E%B0/">资产发现</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">自定义处理方式接口开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/FAQ/">FAQ</a></li>
+					
+				</ul>
+
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>ATD文档中心</h2>
+				<h3>可编程对抗-高级规则</h3>
+			</div>
+			<article class="content">
+				<p>设置好参数后，需要设置策略了，对于复杂的策略，不能用简单的逻辑运算来表达的情况，我们可以用高级模式来实现。</p>
+
+<p>如下图所示：在“<strong>策略模式</strong>”中选择“<strong>高级</strong>”。在高级规则中，输入对应的<strong>逻辑表达式</strong>即可。</p>
+
+<p><img src="/docs/images/log/可编程对抗-高级规则1.png" alt="高级规则" /></p>
+
+<h2 id="如何写高级规则">如何写高级规则？</h2>
+<p>高级规则中就是写一条<strong>逻辑表达式。</strong></p>
+
+<p>逻辑表达式由比较表达式(CExpression)和逻辑运算符构成。</p>
+
+<blockquote>
+  <p>1、比较表达式是由算术表达式(AExpression)和比较运算符构成。</p>
+
+  <p>2、算术表达式由常量，参数，算术运算符构成。</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>逻辑运算符支持 and 和 or 两种操作
+支持的比较运算符有大于(&gt;)和小于(&lt;)符号
+支持的算术运算符有加(+)减(-)乘(*)除(/)
+支持常量与参数进行算数运算
+另外支持括号运算符
+</code></pre></div>  </div>
+  <h3 id="逻辑表达式示例1">逻辑表达式【示例1】</h3>
+  <p>```
+clientIP.5mins.arg1&gt;2*clientIP.5mins.arg2</p>
+</blockquote>
+
+<p>在IP分析视角下，5分钟滑动分析窗口，参数arg1大于参数arg2的2倍</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>说明：
+
+| **clientIP**   | 分析视角为IP   | 
+|:----|:----|
+| **5mins**   | 滑动分析窗口为5分钟   | 
+| **arg1**   | 参数1（实际中写“参数管理”中实际的参数名称，此处为示例）   | 
+| **arg2**   | 参数2（实际中写“参数管理”中实际的参数名称，此处为示例）   | 
+
+### 逻辑表达式【示例2】
+</code></pre></div></div>
+<p>id.1min.arg1&gt;2*id.1min.arg2</p>
+
+<p>在ID分析视角下，1分钟滑动分析窗口，参数arg1大于参数arg2的2倍</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>说明：
+
+| **id**   | 分析视角为ID    | 
+|:----|:----|
+| **1min**   | 滑动分析窗口为1分钟   | 
+| **arg1**   | 参数1（实际中写“参数管理”中实际的参数名称，此处为示例）   | 
+| **arg2**   | 参数2（实际中写“参数管理”中实际的参数名称，此处为示例）   | 
+
+### 算数表达式构成
+</code></pre></div></div>
+<p>分析视角.滑动分析窗口.参数名</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**算数表达式必备3要素：**
+
+**1、分析视角**
+
+分析视角一共有两种IP或ID，请根据该域名的具体情况进行选择
+
+| **IP**   | clientIP   | 
+|:----|:----|
+| **ID**   | id   | 
+
+**2、滑动分析窗口**
+
+| **5分钟**   | 5mins | 
+|:----|:----:|
+| **1分钟**   | 1min | 
+
+注意：当前只支持5分钟和1分钟滑动分析窗口。
+
+**3、参数**
+
+可在“参数管理”中查看已设置好的参数，将参数名写出即可。
+
+## 【案例】暴力破解成功
+&gt;案例场景详情：5分钟内，一个IP成功登录baishancloud.com/user/login的次数大于失败的次数的2倍，并且成功的次数大于20。
+
+**第一步：设置模型**
+
+在可编程对抗模型中，点击“添加”按钮，【名称】输入“暴力破解成功”。
+
+**第二步：设置参数**
+
+设置两个参数： 
+
+1、成功登录的次数
+
+![登录成功](/docs/images/log/成功登录的次数.png)
+
+2、失败登录的次数
+
+![登录失败](/docs/images/log/失败登录的次数.png)
+
+**第三步：设置策略**
+
+</code></pre></div></div>
+<p>策略模式选择“高级”，在高级规则输入框中输入如下表达式
+clientIP.5mins.atd_loginsuccess&gt;2*clientIP.5mins.atd_loginfail and clientIP.5mins.atd_loginsuccess&gt;20
+```
+<img src="/docs/images/log/可编程对抗策略设置4.png" alt="可编程对抗策略设置" /></p>
+
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

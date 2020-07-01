@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/docs/css/main.css">
+		<link rel="apple-touch-icon" href="/docs/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/docs/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/docs/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/docs/"><img src="/docs/images/emblem.svg" width="40" height="40" alt="ATD文档中心 logo"></a>
+				ATD文档中心
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+			<!--
+			<form action="/docs/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="搜索" autofocus>
+				<input type="submit" value="search" style="display: none;">
+			</form>
+		-->
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/docs/">ATD新手入门文档</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE/">高级计算模式的策略设置</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">高级搜索说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%87%A0%E7%A7%8D%E6%8E%A8%E6%97%A5%E5%BF%97%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D/">几种推日志方式介绍</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97-%E9%AB%98%E7%BA%A7%E8%A7%84%E5%88%99/">可编程对抗-高级规则</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97%E6%A8%A1%E5%9E%8B%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">可编程对抗模型说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BD%AE%E8%AF%A2%E5%91%A8%E6%9C%9F%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">轮询周期使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%86%85%E7%BD%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">内网自定义处理接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/">日志配置文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">算法模型开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6%E5%AF%B9%E6%8E%A5%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">微信告警对接操作文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">运行环境自动调整接口文档</a></li>
+					
+						<li class="nav-item current"><a href="/docs/%E6%89%A7%E8%A1%8C%E5%8A%A8%E4%BD%9C%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">执行动作使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%99%BA%E8%83%BD%E6%97%A5%E5%BF%97%E8%A7%A3%E6%9E%90/">智能日志解析</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%B5%84%E4%BA%A7%E5%8F%91%E7%8E%B0/">资产发现</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">自定义处理方式接口开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/FAQ/">FAQ</a></li>
+					
+				</ul>
+
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>ATD文档中心</h2>
+				<h3>执行动作使用文档</h3>
+			</div>
+			<article class="content">
+				<p>目前本产品支持的执行动作有发邮箱、调API接口以及自定义的方式。其中，邮箱和API接口方式的执行动作会调用我们封装好的执行方法。为了满足不同的应用场景，以及多元化执行动作，产品提供了自定义执行动作的方法。</p>
+
+<h2 id="执行事件结果说明">执行事件结果说明</h2>
+<p>执行事件结果以payload作为数据字段，事件分为标准模式，智能模式以及高级模式，因而payload也存在标准模式，智能模式，高级模式，如下分别是三种模式的说明样例：</p>
+
+<p>1、标准模式，字段请参考查询结果,示例如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: {
+  "hits": {
+    "total": 621,
+    "hits": [
+      {
+        "_source": {
+          "ip": "42.99.6.227",
+          "city": "北京",
+          "pv": 1,
+          "province": "北京",
+          "country": "中国",
+          "reason": "危险UA",
+        }
+      },
+      {
+        "_source": {
+          "ip": "63.98.15.27",
+          "city": "休斯敦",
+          "pv": 1,
+          "province": "得克萨斯",
+          "country": "美国",
+          "reason": "危险UA",
+        }
+      },{
+        "_source": {
+          "ip": "41.99.19.185",
+          "city": "奥兰",
+          "pv": 1,
+          "province": "奥兰",
+          "country": "阿尔及利亚",
+          "reason": "危险UA",
+        }
+      },
+      ......
+    ]
+  },
+  "aggregations": {
+    "unique_count_perspective_value": {
+      "value": 275
+    }
+  }
+}
+</code></pre></div></div>
+
+<p>2、智能模式，字段示例如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: [{
+    field: "avg_body_bytes_sent",
+    label: "平均后端响应长度",
+    result: "突增",
+    domain: "a.com"
+}, {
+    field: "avg_request_time_s",
+    label: "平均请求时间",
+    result: "突减",
+    domain: "b.com,c.com"
+}] 
+</code></pre></div></div>
+<p>3、高级模式，执行事件结果由高级模式触发函数的返回值决定。具有高度的自定义性。
+即高级模式的触发结果返回值即为该执行动作的payload。</p>
+
+<h2 id="动作结果的输出样例">动作结果的输出样例</h2>
+
+<h3 id="发邮件调用api接口">发邮件&amp;调用API接口</h3>
+
+<p>对于系统支持的发送邮件和调用API接口的这两种方式，支持动态获取实际数据。在邮件正文和API接口中，事件触发的结果用payload表示，payload存在以下两种常用格式化方式输出到邮件正文或API接口数据（以上述标准模式样例为例）：</p>
+
+<p>1、可直接获取结果
+对于可直接获取的结果，可用{{}}包裹获取，{{}}包裹内容为key的取值，若没有匹配的内容，则显示”“,有对应该key的value则显示value。</p>
+
+<p>输入内容：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    危险UA的条数是：{{payload.hits.total}}条
+</code></pre></div></div>
+
+<p>输出内容：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="err">危险UA的条数是：</span><span class="mi">621</span><span class="err">条</span><span class="w">
+</span></code></pre></div></div>
+
+<p>2、在对象数组内的结果
+对于想获取对象数组内的值，可用{{#obj_key}}{{value}}{{/obj_key}}包裹，的前后可加符号进行分割。在此需要注意obj_key代表需要循环获取目标内容的数组的key，并且对于数组的循环以<code class="highlighter-rouge">#</code>代表开始，以<code class="highlighter-rouge">/</code>代表结束，每个数组元素输出结果单独一行。</p>
+
+<p>输入内容：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    威胁UA的IP列表信息：<span class="nt">&lt;br/&gt;</span>{{#payload.hits.hits}}IP:{{_source.ip}} city: {{_source.city}} {{/payload.hits.hits}}<span class="nt">&lt;br/&gt;</span>总计有{{payload.hits.total}}条记录
+</code></pre></div></div>
+
+<p>输出内容：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="err">威胁UA的IP列表信息：</span><span class="w">
+    </span><span class="err">IP:</span><span class="mf">42.99</span><span class="err">.</span><span class="mf">6.227</span><span class="w"> </span><span class="err">city:北京</span><span class="w">
+    </span><span class="err">IP:</span><span class="mf">63.98</span><span class="err">.</span><span class="mf">15.27</span><span class="w"> </span><span class="err">city:休斯顿</span><span class="w">
+    </span><span class="err">IP:</span><span class="mf">41.99</span><span class="err">.</span><span class="mf">19.185</span><span class="w"> </span><span class="err">city:奥兰</span><span class="w">
+    </span><span class="err">......</span><span class="w">
+    </span><span class="err">总计有</span><span class="mi">621</span><span class="err">条记录</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="更多有关对结果payload数据的解析方式可以参考如下链接文档">更多有关对结果payload数据的解析方式可以参考如下链接文档</h4>
+<p>https://github.com/janl/mustache.js#variables</p>
+
+<h3 id="自定义执行动作">自定义执行动作</h3>
+<p>自定义执行函数需要定义一个执行函数，支持JavaScript语法。</p>
+
+<h4 id="执行函数参数">执行函数参数</h4>
+<p>该函数的输入参数是<code class="highlighter-rouge">执行事件结果说明</code>中的payload</p>
+<h4 id="执行函数主体">执行函数主体</h4>
+<p>在函数内，可根据payload，自定义不同情况下的执行动作。
+目前产品内支持多种封装后的操作函数，包括：</p>
+<ol>
+  <li>可进行接口请求的fetchData(url, method, headers, body)</li>
+  <li>可进行邮件发送的postEmail(mailData, SMTPConfig, callReady, callError)</li>
+  <li>可进行临时存储的CacheStorage</li>
+  <li>时间处理可使用moment()</li>
+</ol>
+
+<p>……</p>
+<h4 id="具体使用方式可参考高级计算模式的策略设置内的qa">具体使用方式可参考《高级计算模式的策略设置》内的Q&amp;A。</h4>
+<p>https://github.com/yunjuhe/atd/blob/master/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE.md</p>
+
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

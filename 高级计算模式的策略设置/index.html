@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/docs/css/main.css">
+		<link rel="apple-touch-icon" href="/docs/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/docs/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/docs/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/docs/"><img src="/docs/images/emblem.svg" width="40" height="40" alt="ATD文档中心 logo"></a>
+				ATD文档中心
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+			<!--
+			<form action="/docs/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="搜索" autofocus>
+				<input type="submit" value="search" style="display: none;">
+			</form>
+		-->
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/docs/">ATD新手入门文档</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item current"><a href="/docs/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE/">高级计算模式的策略设置</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">高级搜索说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%87%A0%E7%A7%8D%E6%8E%A8%E6%97%A5%E5%BF%97%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D/">几种推日志方式介绍</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97-%E9%AB%98%E7%BA%A7%E8%A7%84%E5%88%99/">可编程对抗-高级规则</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97%E6%A8%A1%E5%9E%8B%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">可编程对抗模型说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BD%AE%E8%AF%A2%E5%91%A8%E6%9C%9F%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">轮询周期使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%86%85%E7%BD%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">内网自定义处理接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/">日志配置文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">算法模型开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6%E5%AF%B9%E6%8E%A5%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">微信告警对接操作文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">运行环境自动调整接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%89%A7%E8%A1%8C%E5%8A%A8%E4%BD%9C%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">执行动作使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%99%BA%E8%83%BD%E6%97%A5%E5%BF%97%E8%A7%A3%E6%9E%90/">智能日志解析</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%B5%84%E4%BA%A7%E5%8F%91%E7%8E%B0/">资产发现</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">自定义处理方式接口开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/FAQ/">FAQ</a></li>
+					
+				</ul>
+
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>ATD文档中心</h2>
+				<h3>高级计算模式的策略设置</h3>
+			</div>
+			<article class="content">
+				<ul>
+  <li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+  <li><a href="#%E8%AE%BE%E7%BD%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5">设置查询语句</a></li>
+  <li><a href="#%E5%AE%9A%E4%B9%89%E8%A7%A6%E5%8F%91%E6%9D%A1%E4%BB%B6">定义触发条件</a>
+    <ul>
+      <li><a href="#%E8%A7%A6%E5%8F%91%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0">触发函数参数</a></li>
+      <li><a href="#%E8%A7%A6%E5%8F%91%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC">触发函数返回值</a></li>
+    </ul>
+  </li>
+  <li><a href="#%E7%A4%BA%E4%BE%8B">示例</a>
+    <ul>
+      <li><a href="#%E5%9C%BA%E6%99%AF%E4%B8%805xx%E7%8A%B6%E6%80%81%E7%A0%81%E5%8D%A0%E6%AF%94%E5%BC%82%E5%B8%B8%E4%BA%8B%E4%BB%B6">场景一：5XX状态码占比异常事件</a></li>
+      <li><a href="#%E5%9C%BA%E6%99%AF%E4%BA%8C5xx%E7%8A%B6%E6%80%81%E7%A0%81%E6%95%B0%E9%87%8F%E7%8E%AF%E6%AF%94%E4%BA%8B%E4%BB%B6">场景二：5XX状态码数量环比事件</a></li>
+      <li><a href="#%E5%9C%BA%E6%99%AF%E4%B8%89%E6%AF%8F%E5%88%86%E9%92%9F%E8%AF%B7%E6%B1%82%E6%95%B0top5%E7%9A%84%E5%A8%81%E8%83%81ip%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%9C%A8%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E5%BA%93%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6">场景三：每分钟请求数TOP5的威胁IP判断是否在威胁情报库中的事件</a></li>
+    </ul>
+  </li>
+  <li><a href="#qa">Q&amp;A</a>
+    <ul>
+      <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82">如何进行接口请求？</a></li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96">如何进行时间格式化？</a></li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8">如何进行临时数据存储？</a></li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6">如何发送邮件？</a></li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8Ces%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2">如何进行ES数据查询？</a></li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%AE%BE%E5%A4%87%E8%B0%83%E7%94%A8">如何进行设备调用？</a>
+        <ul>
+          <li><a href="#f5%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8">f5模块使用</a></li>
+          <li><a href="#radware%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8%E7%9B%AE%E5%89%8D%E4%BB%A5v4%E4%B8%BA%E4%BE%8B">radware模块使用，目前以v4为例</a></li>
+        </ul>
+      </li>
+      <li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8javascript%E5%B7%A5%E5%85%B7%E5%BA%93">如何使用JavaScript工具库？</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="概述">概述</h2>
+<p>为了补充标准计算模式的多样性和复杂性，产品提供了策略设置的高级计算模式。在高级计算模式中，可以更加灵活地定义查询语句和触发条件，支持更多应用场景。</p>
+<h2 id="设置查询语句">设置查询语句</h2>
+<p>支持标准的Elasticsearch(以下简称ES)查询语句</p>
+<ol>
+  <li>选择索引，选择数据所在的索引。</li>
+  <li>编辑框内，填写ES查询的body体，查询语句遵循标准的ES查询标准，示例如下：
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+   "query": {
+     "bool": {
+       "must": [
+         {
+           "range": {
+             "time_local": {
+               "gte": "now-5m",
+               "lte": "now"
+             }
+           }
+         }
+       ],
+       "must_not": []
+     }
+   },
+   "size": 10
+ }
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>PS: 更多查询语句可以参考如下链接文档：</p>
+
+<p>https://www.elastic.co/guide/cn/elasticsearch/guide/current/search-in-depth.html</p>
+
+<p>主要涉及到结构化搜索，全文搜索，多字段搜索，近似匹配…等。</p>
+
+<ol>
+  <li>查询结果。根据(1)选择的索引，以及(2)填写的查询语句，可在ES中检索到相应数据，这里用payload表示查询后的结果，该结果也是定义触发条件的输入。</li>
+</ol>
+
+<h2 id="定义触发条件">定义触发条件</h2>
+<p>触发条件需要定义一个触发函数，支持JavaScript语法。</p>
+<h3 id="触发函数参数">触发函数参数：</h3>
+<p>该函数的输入参数是上一步数据查询的结果-payload，在函数编写过程中可参考页面展示的数据查询结果。</p>
+<h3 id="触发函数返回值">触发函数返回值：</h3>
+<p>通过一系列的触发条件判断编写，</p>
+<blockquote>
+  <p>若策略触发，则该函数的返回值定义为策略的触发结果。</p>
+</blockquote>
+
+<blockquote>
+  <p>若策略没有触发，则该函数可不返回返回值，或着返回false。</p>
+</blockquote>
+
+<p>一个简单的触发函数，示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
+    let result = "payload.hits.total=" + payload.hits.total
+    if (payload.hits.total &gt; 5) {
+        return result;
+    }
+}
+</code></pre></div></div>
+<h2 id="示例">示例</h2>
+<h3 id="场景一5xx状态码占比异常事件">场景一：5XX状态码占比异常事件</h3>
+<ul>
+  <li>描述：监控最近5分钟5XX状态码的数量，如果5XX的请求数在所有请求数中所占的比例超过一定值（假定为5%）则认为触发该事件，记录下当前5XX的数量及占比。</li>
+  <li>思路：
+    <ul>
+      <li>选择该事件数据来源的索引 - atd-statistics-domain-*</li>
+      <li>编写Elasticsearch查询条件。根据描述可知，时间范围为最近五分钟，需要查询得到5XX的请求数量以及该时间段内所有请求数的数量。</li>
+      <li>根据查询结果编写触发函数。判断占比是否超过5%，若超过则返回需要记录的数据。</li>
+    </ul>
+  </li>
+  <li>实现：
+  ##### 设置查询条件：
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "range": {
+              "time_local": {
+                "gte": "now-5m",
+                "lte": "now"
+              }
+            }
+          }
+        ],
+        "must_not": []
+      }
+    },
+    "aggs": {
+        "5xx_count_agg": {
+            "sum": {
+                "field": "5xx_count"
+            }
+        },
+        "request_count_agg": {
+            "sum": {
+                "field": "request_count"
+            }
+        }
+    },
+    "size": 0
+  }
+</code></pre></div>    </div>
+    <p>##### 查询结果如下：</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+      "total": 7,
+      "successful": 7,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": 13,
+      "max_score": 0,
+      "hits": []
+    },
+    "aggregations": {
+      "request_count_agg": {
+        "value": 24277
+      },
+      "5xx_count_agg": {
+        "value": 3108
+      }
+    }
+  }
+</code></pre></div>    </div>
+    <p>##### 定义触发条件：</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function trigger(payload) {
+      let count_5xx = 0;
+      let request_count = 0;
+      let proportion, result;
+      if (payload.aggregations &amp;&amp; payload.aggregations["5xx_count_agg"]) {
+          count_5xx = payload.aggregations["5xx_count_agg"].value;
+      }
+      if (payload.aggregations &amp;&amp; payload.aggregations.request_count_agg) {
+          request_count = payload.aggregations.request_count_agg.value;
+      }
+      if (request_count) {
+          proportion = count_5xx / request_count;
+      }
+      if (proportion &gt; 0.05) {
+          result = "5xx数量：" + count_5xx +"，当前占比：" + (proportion * 100).toFixed(2) + "%";
+          return result;
+      }
+  }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="场景二5xx状态码数量环比事件">场景二：5XX状态码数量环比事件</h3>
+<ul>
+  <li>描述：监控最近5分钟5XX状态码的数量，比较当前时间5XX状态码数量超过一定值（假定1000），并且当前数量与5分钟前的5XX数量相比增多超过一定比例（假定20%），则认为触发事件，记录当前时间与5分钟前的5XX数量。</li>
+  <li>思路：
+    <ul>
+      <li>选择该事件数据来源的索引 - atd-statistics-domain-*</li>
+      <li>编写Elasticsearch查询条件。根据描述可知，时间范围为最近五分钟，需要查询得到5XX的请求数量。</li>
+      <li>编写触发函数。根据描述需要进行当前数量与5分钟前数量进行比较，这里需要借助CacheStorage模块进行5XX数量的临时存储，存储的信息包括（key:’5xx_count_MM-DDHH:mm’,value: 5XX数量），在进行触发判断时，首先去获取5分钟前的数量，然后与给定值，以及当前时间的数量进行比较，若超过则返回需要记录的数据。</li>
+    </ul>
+  </li>
+  <li>实现：
+  ##### 设置查询条件：
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "range": {
+              "time_local": {
+                "gte": "now-5m",
+                "lte": "now"
+              }
+            }
+          }
+        ],
+        "must_not": []
+      }
+    },
+    "aggs": {
+        "5xx_count_agg": {
+            "sum": {
+                "field": "5xx_count"
+            }
+        }
+    },
+    "size": 0
+  }
+</code></pre></div>    </div>
+    <p>##### 查询结果如下：</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "took": 3,
+    "timed_out": false,
+    "_shards": {
+      "total": 8,
+      "successful": 8,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": 13,
+      "max_score": 0,
+      "hits": []
+    },
+    "aggregations": {
+      "5xx_count_agg": {
+        "value": 87
+      }
+    }
+  }
+</code></pre></div>    </div>
+    <p>##### 定义触发条件：</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="no">normal_5xx_count</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+      <span class="k">const</span> <span class="no">normal_5xx_proportion</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+      <span class="k">const</span> <span class="no">cache_storage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CacheStorage</span><span class="p">(</span><span class="s1">'event'</span><span class="p">);</span>
+      <span class="nx">let</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">()</span><span class="o">.</span><span class="nx">unix</span><span class="p">();</span>
+      <span class="c1">//存当前数据</span>
+      <span class="nx">let</span> <span class="nb">key</span> <span class="o">=</span> <span class="s1">'5xx_count_'</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM-DDHH:mm"</span><span class="p">);</span>
+      <span class="nx">let</span> <span class="nx">value</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="p">[</span><span class="s2">"5xx_count_agg"</span><span class="p">])</span> <span class="p">{</span>
+          <span class="nx">value</span> <span class="o">=</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="p">[</span><span class="s2">"5xx_count_agg"</span><span class="p">]</span><span class="o">.</span><span class="nx">value</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
+      <span class="nx">data</span><span class="o">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+      <span class="nx">data</span><span class="o">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'5XX数量'</span><span class="p">;</span>
+      <span class="nx">cache_storage</span><span class="o">.</span><span class="nx">set</span><span class="p">(</span><span class="nb">key</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+      <span class="c1">//取5分钟前数据</span>
+      <span class="nx">let</span> <span class="nx">pre_key</span> <span class="o">=</span> <span class="s1">'5xx_count_'</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'minutes'</span><span class="p">)</span><span class="o">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM-DDHH:mm"</span><span class="p">);</span>
+      <span class="nx">let</span> <span class="nx">pre_data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">cache_storage</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">pre_key</span><span class="p">);</span>
+      <span class="nx">let</span> <span class="nx">pre_value</span> <span class="o">=</span> <span class="nx">pre_data</span> <span class="o">&amp;&amp;</span> <span class="nx">pre_data</span><span class="o">.</span><span class="nx">value</span><span class="p">;</span>
+      <span class="c1">//比较</span>
+      <span class="nx">let</span> <span class="nx">rising_value</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">-</span> <span class="nx">pre_value</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="nx">normal_5xx_count</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="nx">pre_data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">pre_value</span> <span class="o">&amp;&amp;</span> <span class="nx">rising_value</span> <span class="o">/</span> <span class="nx">pre_value</span> <span class="o">&gt;=</span> <span class="nx">normal_5xx_proportion</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">let</span> <span class="nx">rising_proportion</span> <span class="o">=</span> <span class="p">((</span><span class="nx">rising_value</span> <span class="o">/</span> <span class="nx">pre_value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"%"</span><span class="p">;</span>
+          <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s1">'当前5XX数量：'</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">'，5分钟前5XX数量：'</span> <span class="o">+</span> <span class="nx">pre_value</span> <span class="o">+</span> <span class="s2">"增加："</span> <span class="o">+</span>  <span class="nx">rising_proportion</span><span class="p">;</span>
+          <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="场景三每分钟请求数top5的威胁ip判断是否在威胁情报库中的事件">场景三：每分钟请求数TOP5的威胁IP判断是否在威胁情报库中的事件</h3>
+<ul>
+  <li>描述：监控每分钟web类型的威胁事件，对请求数排行TOP5的威胁事件的IP做进一步的判断，判断其是否在已有的威胁情报库中（假定这里通过接口 http://www.baishancloud.com/threatInfo?ip=xxx 判断），通过判断条件若满足条件，则触发事件，记录下该IP及其在威胁情报库中的原因。
+```
+接口说明： http://www.baishancloud.com/threatInfo?ip=xxx
+接口返回值：
+data: {
+  hit: 0 or 1, // 0表示威胁情报库中没有该IP，1表示威胁情报库中存在该IP
+  reason: ‘爬虫’ // 该IP在威胁情报库中对应的原因
+}</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">-</span> <span class="nx">思路</span><span class="err">：</span>
+  <span class="o">-</span> <span class="nx">选择该事件数据来源的索引</span> <span class="o">-</span> <span class="nx">atd</span><span class="o">-</span><span class="nx">event</span><span class="o">-</span><span class="nx">online</span><span class="o">-*</span>
+  <span class="o">-</span> <span class="nx">编写Elasticsearch查询条件</span><span class="err">。</span><span class="nx">根据描述可知</span><span class="err">，</span><span class="nx">时间范围为每分钟</span><span class="err">，</span><span class="nx">需要查询得到类型为web</span><span class="err">，</span><span class="nx">按IP维度聚合并按请求数降序排序的TOP5威胁事件</span><span class="err">。</span>
+  <span class="o">-</span> <span class="nx">编写触发函数</span><span class="err">。</span><span class="nx">根据描述可知需要对TOP5的IP进行调用接口</span><span class="err">，</span><span class="nx">并对接口返回进行判断</span><span class="err">，</span><span class="nx">若满足条件则触发事件返回需要记录的信息</span><span class="err">。</span>
+
+<span class="o">-</span> <span class="nx">实现</span><span class="err">：</span>
+    <span class="c1">##### 设置查询条件：</span>
+    <span class="sb">```
+    {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "range": {
+                            "time_local": {
+                                "gte": "now-1m",
+                                "lte": "now"
+                            }
+                        }
+                    }, {
+                        "term": {
+                            "service_category": "web"
+                        }
+                    }
+                ],
+                "must_not": []
+            }
+        },
+        "aggs": {
+            "ip_group": {
+                "terms": {
+                    "field": "ip",
+                    "size": 5,
+                    "order": {
+                        "pv_count": "desc"
+                    }
+                },
+                "aggs": {
+                    "pv_count": {
+                        "sum": {
+                            "field": "pv"
+                        }
+                    }
+                }
+            }
+        },
+        "size": 0
+    }
+    ```</span>
+    <span class="c1">##### 查询结果如下：</span>
+    <span class="sb">```
+    {
+     "took": 7,
+     "timed_out": false,
+     "_shards": {
+       "total": 71,
+       "successful": 71,
+       "skipped": 0,
+       "failed": 0
+     },
+     "hits": {
+       "total": 28,
+       "max_score": 0,
+       "hits": []
+     },
+     "aggregations": {
+       "ip_group": {
+         "doc_count_error_upper_bound": -1,
+         "sum_other_doc_count": 20,
+         "buckets": [
+           {
+             "key": "124.65.226.82",
+             "doc_count": 2,
+             "pv_count": {
+               "value": 26
+             }
+           },
+           {
+             "key": "36.110.108.66",
+             "doc_count": 2,
+             "pv_count": {
+               "value": 21
+             }
+           },
+           {
+             "key": "203.76.219.218",
+             "doc_count": 2,
+             "pv_count": {
+               "value": 3
+             }
+           },
+           {
+             "key": "36.110.72.18",
+             "doc_count": 1,
+             "pv_count": {
+               "value": 3
+             }
+           },
+           {
+             "key": "180.118.247.2",
+             "doc_count": 1,
+             "pv_count": {
+               "value": 2
+             }
+           }
+         ]
+       }
+     }
+   }
+    ```</span>
+    <span class="c1">##### 定义触发条件：</span>
+    <span class="sb">``</span><span class="err">`</span>
+    <span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="no">requestUrl</span> <span class="o">=</span> <span class="s2">"http://www.baishancloud.com/threatInfo?ip="</span><span class="p">;</span>
+        <span class="k">const</span> <span class="no">method</span> <span class="o">=</span> <span class="s2">"get"</span><span class="p">;</span>
+        <span class="nx">let</span> <span class="nx">topIP</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span><span class="o">.</span><span class="nx">buckets</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">topIP</span> <span class="o">=</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span><span class="o">.</span><span class="nx">buckets</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">topIP</span><span class="o">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">requestUrl</span> <span class="o">+</span> <span class="nx">topIP</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">.</span><span class="nb">key</span><span class="p">;</span>
+           <span class="nx">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
+           <span class="nx">let</span> <span class="nx">hited</span> <span class="o">=</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span><span class="o">.</span><span class="nx">hit</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+           <span class="nx">let</span> <span class="nx">reason</span> <span class="o">=</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span><span class="o">.</span><span class="nx">reason</span> <span class="o">||</span> <span class="s1">'暂无'</span><span class="p">;</span>
+           <span class="k">if</span> <span class="p">(</span><span class="nx">hited</span><span class="p">)</span> <span class="p">{</span>
+               <span class="nx">result</span> <span class="o">+=</span> <span class="s2">"IP:"</span> <span class="o">+</span> <span class="nx">topIP</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">.</span><span class="nb">key</span> <span class="o">+</span> <span class="s2">"情报库内原因:"</span> <span class="o">+</span> <span class="nx">reason</span> <span class="o">+</span> <span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="qa">Q&amp;A</h2>
+<h3 id="如何进行接口请求">如何进行接口请求？</h3>
+<p>在触发函数编写的过程中，本产品提供了封装好的接口请求函数fetchData，该函数的返回值为请求返回值。
+请配合async/await的同步操作使用。即触发函数以async开头，接口请求函数以await开始。示例如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  fetchData(url, method, headers, body)，其中：
+  url: 完整的请求地址，
+  method: 请求方法，
+  headers: 请求的headers，不传时默认为{ 'Content-Type': 'application/json' }，
+  body: 请求的body体需进行stringify，JSON.stringify(body)
+
+</code></pre></div></div>
+<p>对于一个带接口请求的触发函数，示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://xxx/test"</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="s2">"get"</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
+    <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">"payload.hits.total="</span> <span class="o">+</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">hits</span><span class="o">.</span><span class="nx">total</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">hits</span><span class="o">.</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="nx">data</span><span class="o">.</span><span class="nx">total</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://xxx/test"</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="s2">"post"</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="o">:</span> <span class="s1">'application/json'</span> <span class="p">};</span>
+    <span class="nx">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="o">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">});</span>
+    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="如何进行时间格式化">如何进行时间格式化？</h3>
+<p>对于触发函数中的时间格式化处理，本产品支持moment进行时间格式化。示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var time = moment().unix();
+</code></pre></div></div>
+<h3 id="如何进行临时数据存储">如何进行临时数据存储？</h3>
+<p>本产品内置了临时数据存储模块CacheStorage，可供用户进行数据的临时存储，以及后续使用。</p>
+
+<p>该存储模块提供了三种处理数据的方法，分别为get，set，delete。请配合async/await的同步操作使用。</p>
+
+<p>CacheStorage模块的使用具体描述如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const cache_storage = new CacheStorage('event');
+cache_storage.get(key);
+cache_storage.set(key, value, expire_time);
+cache_storage.delete(key);
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.get(key)，其中：
+参数：
+  key: 数据存储的key值
+返回值：
+  若存在该key对应的value，且该数据没有过期，则返回value，否则返回null。
+示例：
+let value = await cache_storage.get(key);
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.set(key, value, expire_time)，其中：
+参数：
+  key: 数据存储的key;
+  value: 存储的数据，支持number，string，object，array等格式;
+  expire_time: 数据保存时间（秒），可选。若不填，默认数据保存30天;
+返回值：
+  若数据存储成功，返回true；失败则返回false。
+示例：
+  let key = 'total';
+  let value = 100;
+  let expire_time = 86400; //数据保存86400秒
+  await set(key, value, expire_time);
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.delete(key)，其中：
+参数：
+  key: 数据存储的key值
+返回值：
+  若数据删除成功，返回true；失败则返回false。
+示例：
+  await cache_storage.delete(key);
+</code></pre></div></div>
+<h3 id="如何发送邮件">如何发送邮件？</h3>
+<p>本产品提供内置的邮件发送函数<code class="highlighter-rouge">postEmail</code>，示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function postEmail(mailData, SMTPConfig, callReady, callError)，其中：
+  mailData: 发送邮件内容对象，包括to、title、content属性；
+  SMTPConfig: 若需要使用自己的SMTP服务器，请传入相关配置包括host、port、user、password属性，可选；
+  callReady: 发送成功回调，可选；
+  callError: 发送失败回调，可选；
+</code></pre></div></div>
+<p>其中<code class="highlighter-rouge">mailData</code>参数，分使用本产品提供的SMTP服务和用户自身SMTP服务两种情况进行说明：</p>
+<ol>
+  <li>使用本产品提供的SMTP，示例如下：
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
+  mailData.to = xxx; //收件人邮箱地址，多个用分号分割
+  mailData.title = xxx; //邮件主题
+  mailData.content = xxx; //邮件内容
+  postEmail(mailData);
+</code></pre></div>    </div>
+  </li>
+  <li>用户自身SMTP服务器，示例如下：
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
+  mailData.to = xxx; //收件人邮箱地址，多个用分号分割
+  mailData.title = xxx; //邮件主题
+  mailData.content = xxx; //邮件内容
+  let SMTPConfig = {}; //SMTP服务器信息
+  SMTPConfig.host = xxx; //SMPT服务器地址
+  SMTPConfig.port = xxx; //端口
+  SMTPConfig.user = xxx; //发件邮箱
+  SMTPConfig.password = xxx; //SMTP授权码
+  postEmail(mailData, SMTPConfig);
+</code></pre></div>    </div>
+    <h3 id="如何进行es数据查询">如何进行ES数据查询？</h3>
+    <p>在触发函数编写的过程中，本产品提供了封装好的ES请求模块esClient，详细的API调用方式请参考官方elasticsearch.js。
+文档如下：</p>
+  </li>
+</ol>
+
+<p>https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html</p>
+
+<p>请配合async/await的同步操作使用。即触发函数以async开头，接口请求函数以await开始。示例如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">xxx</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">xxx</span><span class="p">;</span>
+    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">esClient</span><span class="o">.</span><span class="nx">search</span><span class="p">({</span>
+      <span class="nx">index</span><span class="o">:</span> <span class="nx">index</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="nx">body</span>
+    <span class="p">});</span>
+    <span class="o">......</span><span class="nx">判断条件</span><span class="o">......</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="如何进行设备调用">如何进行设备调用？</h3>
+<p>在触发函数编写的过程中，为了方便关联各种设备的数据，本产品提供了封装好的调用模块bscModule，可用于各种设备调用交互处理。bscModule模块中封装的各设备类型及文档说明，如下表所示。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>对应模块</th>
+      <th>示例</th>
+      <th>文档</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>f5</td>
+      <td>f5IControl</td>
+      <td><code class="highlighter-rouge"> let f5IControl = bscModule.f5IControl</code></td>
+      <td>https://github.com/thwi/node-icontrol</td>
+    </tr>
+    <tr>
+      <td>radware</td>
+      <td>radWare</td>
+      <td><code class="highlighter-rouge"> let radWare = bscModule.radWare</code></td>
+      <td>https://webhelp.radware.com/Vision/REST/4_00_00/index.html</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>具体示例：</p>
+<h4 id="f5模块使用">f5模块使用</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
+    var f5IControl = bscModule.f5IControl; //引入f5关联模块
+    var bigip = new f5IControl({
+      host: '192.xxx.xxx.xxx',
+      proto: 'https',
+      port: 443,
+      user: 'admin',
+      pass: 'admin',
+      strict: true,
+      debug: false
+    });
+    ......其他api使用请参考文档：https://github.com/thwi/node-icontrol#usage ......
+}
+</code></pre></div></div>
+<h4 id="radware模块使用目前以v4为例">radware模块使用，目前以v4为例</h4>
+<p>radware模块中，提供登录函数login，以及数据交互请求函数request。
+login函数的返回值如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>登录成功：
+{
+  "status": "ok",
+  "jsessionid": "sessionid"
+}
+登录失败：
+{
+  "status": "error",
+  "message": "Invalid Username or invalid Password. Re-enter."
+}
+
+</code></pre></div></div>
+<p>request函数具体描述如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>request(path, method, opts)，其中：
+  path: 请参照radware文档中各请求path，如：'/mgmt/system/user/logout'，
+  method: 请求方法，
+  opts: {
+    headers: {}, //已设置默认值，一般请求无需设置，特殊情况可自行设置
+    body: {}
+  }
+  * headers说明，若需设置，请参照
+  headers = {
+    'Content-Type': 'application/json',
+    'cookie': jsessionid //*必须，值为login接口返回的 jsessionid
+  };
+</code></pre></div></div>
+<p>具体应用实例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nx">radWare</span> <span class="o">=</span> <span class="nx">bscModule</span><span class="o">.</span><span class="nx">radWare</span><span class="p">;</span> <span class="c1">//引入radware关联模块</span>
+    <span class="k">var</span> <span class="nx">radware</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">radWare</span><span class="p">({</span>
+      <span class="nx">host</span><span class="o">:</span> <span class="s1">'192.xxx.xxx.xxx'</span><span class="p">,</span>
+      <span class="nx">proto</span><span class="o">:</span> <span class="s1">'http'</span><span class="p">,</span> <span class="c1">//默认为http</span>
+      <span class="nx">username</span><span class="o">:</span> <span class="s1">'admin'</span><span class="p">,</span>
+      <span class="nx">password</span><span class="o">:</span> <span class="s1">'admin'</span>
+    <span class="p">});</span>
+    <span class="c1">//登录</span>
+    <span class="k">var</span> <span class="nx">login</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">radware</span><span class="o">.</span><span class="nx">login</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">login</span><span class="o">.</span><span class="nx">status</span> <span class="o">==</span> <span class="s1">'ok'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">//进一步的数据关联交互，如获取apm设备列表</span>
+      <span class="k">var</span> <span class="nx">apm_application</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">radware</span><span class="o">.</span><span class="nx">requst</span><span class="p">(</span><span class="s1">'/mgmt/system/config/apm/application'</span><span class="p">,</span><span class="s1">'get'</span><span class="p">);</span>
+      <span class="o">......</span><span class="nx">其他api使用请参考官方文档https</span><span class="o">://</span><span class="nx">webhelp</span><span class="o">.</span><span class="nx">radware</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">Vision</span><span class="o">/</span><span class="nx">REST</span><span class="o">/</span><span class="mi">4_00_00</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">html</span><span class="o">......</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="如何使用javascript工具库">如何使用JavaScript工具库？</h3>
+<p>为了更方便，快捷地使用JavaScript语言进行高级模式的编写，本产品提供了内置封装的<code class="highlighter-rouge">lodash</code>JS工具模块，使用时通过<code class="highlighter-rouge">_</code>调用，简单示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>对象取值
+_.get(object, path, [defaultValue])
+
+var object = { 'a': [{ 'b': { 'c': 3 } }] };
+
+_.get(object, 'a[0].b.c');
+// =&gt; 3
+
+_.get(object, ['a', '0', 'b', 'c']);
+// =&gt; 3
+
+_.get(object, 'a.b.c', 'default');
+// =&gt; 'default'
+
+数组的交集
+_.intersection([arrays])
+
+参数
+[arrays] (...Array): 待检查的数组。
+返回值
+(Array): 返回一个包含所有传入数组交集元素的新数组。
+
+_.intersection([1, 2], [4, 2], [2, 1]);
+// =&gt; [2]
+
+数组的差集
+_.difference(array, [values])
+参数
+array (Array): 要检查的数组。
+[values] (...Array): 排除的值。
+返回值
+(Array): 返回一个过滤值后的新数组。
+
+_.difference([3, 2, 1], [4, 2]);
+// =&gt; [3, 1]
+
+......
+
+</code></pre></div></div>
+
+<p>具体的API调用方式，可参考官方文档：
+https://lodash.com/docs/4.17.15</p>
+
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/docs/css/main.css">
+		<link rel="apple-touch-icon" href="/docs/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/docs/images/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/docs/images/favicon.png">
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/docs/"><img src="/docs/images/emblem.svg" width="40" height="40" alt="ATD文档中心 logo"></a>
+				ATD文档中心
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+			<!--
+			<form action="/docs/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="搜索" autofocus>
+				<input type="submit" value="search" style="display: none;">
+			</form>
+		-->
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/docs/">ATD新手入门文档</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%AD%96%E7%95%A5%E8%AE%BE%E7%BD%AE/">高级计算模式的策略设置</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">高级搜索说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%87%A0%E7%A7%8D%E6%8E%A8%E6%97%A5%E5%BF%97%E6%96%B9%E5%BC%8F%E4%BB%8B%E7%BB%8D/">几种推日志方式介绍</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97-%E9%AB%98%E7%BA%A7%E8%A7%84%E5%88%99/">可编程对抗-高级规则</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%8F%AF%E7%BC%96%E7%A8%8B%E5%AF%B9%E6%8A%97%E6%A8%A1%E5%9E%8B%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">可编程对抗模型说明文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BD%AE%E8%AF%A2%E5%91%A8%E6%9C%9F%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">轮询周期使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%86%85%E7%BD%91%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">内网自定义处理接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/">日志配置文档</a></li>
+					
+						<li class="nav-item current"><a href="/docs/%E7%AE%97%E6%B3%95%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">算法模型开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E5%BE%AE%E4%BF%A1%E5%91%8A%E8%AD%A6%E5%AF%B9%E6%8E%A5%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">微信告警对接操作文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/">运行环境自动调整接口文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%89%A7%E8%A1%8C%E5%8A%A8%E4%BD%9C%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">执行动作使用文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E6%99%BA%E8%83%BD%E6%97%A5%E5%BF%97%E8%A7%A3%E6%9E%90/">智能日志解析</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%B5%84%E4%BA%A7%E5%8F%91%E7%8E%B0/">资产发现</a></li>
+					
+						<li class="nav-item "><a href="/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/">自定义处理方式接口开发文档</a></li>
+					
+						<li class="nav-item "><a href="/docs/FAQ/">FAQ</a></li>
+					
+				</ul>
+
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>ATD文档中心</h2>
+				<h3>算法模型开发文档</h3>
+			</div>
+			<article class="content">
+				<blockquote>
+  <p>查看标准算法模型与添加自定义算法模型为高级功能，如需开通请<a href="http://juhe.baishancloud.com/contact.html">联系我们</a></p>
+</blockquote>
+
+<p>为了高效识别多种威胁，ATD的实时引擎提供了9种标准算法模型，分别为：漏洞攻击，爬虫，CC攻击，账号类攻击，慢速攻击，异常流量包攻击，刷单类，路径扫描，危险UA。为了支持识别更多类型的威胁，支持创建自定义算法模型，同时也支持根据实际业务需求来自行添加算法模型。</p>
+
+<h2 id="1实时引擎是如何工作的">1、实时引擎是如何工作的？</h2>
+
+<blockquote>
+  <p>实时引擎主要分为两大部分：1、特征计算。 2、分类器分类。</p>
+</blockquote>
+
+<p>简单的说就是实时引擎获取用户输入的日志，通过特征计算得到用户的特征向量，之后分类器根据用户的特征向量对用户进行分类，选出异常用户。最后调用接口输出异常用户信息。</p>
+
+<h3 id="11什么是特征计算">1.1、什么是特征计算？</h3>
+
+<blockquote>
+  <p>所谓特征计算就是将业务日志转化为特征的过程。输入是一条一条的日志，输出是特征向量。总体上特征可以分为两类:1、用户特征。2、域名特征。
+用户特征的主体是用户，一个用户的特征是对一段时间内这个用户的行为进行分析，得出的一个多维的特征向量。在ATD中，用户特征中clientIP、id表示。
+域名特征的主体是域名，一个域名的特征是对一段时间内所有访问这个域名的用户行为进行分析，得出的一个多维的特征向量。ATD中，域名特征用domain表示。</p>
+</blockquote>
+
+<p>下面给出样例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clientIP.userAgent.most                 UserAgent最大相似占比
+clientIP.userAgent.uniq                 UserAgent集合空间占比
+clientIP.userAgent.mrr                  UserAgent最大重复环占比
+clientIP.dangerousUserAgentCount        危险ua的数量
+clientIP.2xxHttpCodeCount               2xx状态码的数量
+clientIP.3xxHttpCodeCount               3xx状态码的数量
+id.averageResponseBodyByteSent          HTTP响应包平均大小
+domain.averageRequestTime               域名HTTP请求平均时长
+</code></pre></div></div>
+<p>其中每一条是一个特征向量。</p>
+
+<h3 id="12什么是分类器">1.2、什么是分类器？</h3>
+
+<p>现在假定我们已经有了上面这些特征了，如何根据这些特征来判断一个用户是不是攻击呢？当前的做法是基于规则，下面写给出一条规则样例：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clientIP.pv&gt;50 and clientIP.requestPath.most&gt;0.99
+</code></pre></div></div>
+<p>上面这条是一个逻辑表达式，分类器是由多条上述规则组成的。</p>
+
+<h2 id="2举例说明标准算法模型">2、举例说明标准算法模型</h2>
+
+<p>如：异常流量包攻击</p>
+<blockquote>
+  <p>描述：攻击者构造大量的异常大小HTTP请求，从而消耗服务端带宽</p>
+</blockquote>
+
+<p>代码如下所示：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;policy&gt;
+        &lt;id&gt;20501&lt;/id&gt;
+        &lt;name&gt;异常流量包攻击&lt;/name&gt;
+        &lt;path&gt;/&lt;/path&gt;
+        &lt;rule&gt;id.pv&gt;4.5*userMaxPv  and  id.averageRequestLength&gt;domain.averageRequestLength*10&lt;/rule&gt;
+        &lt;action&gt;online&lt;/action&gt;
+    &lt;/policy&gt;
+    &lt;policy&gt;
+        &lt;id&gt;20502&lt;/id&gt;
+        &lt;name&gt;异常流量包攻击&lt;/name&gt;
+        &lt;path&gt;/&lt;/path&gt;
+        &lt;rule&gt;id.pv&gt;3.5*userMaxPv  and  id.averageRequestLength&gt;domain.averageRequestLength*15&lt;/rule&gt;
+        &lt;action&gt;online&lt;/action&gt;
+    &lt;/policy&gt;
+    &lt;policy&gt;
+        &lt;id&gt;20503&lt;/id&gt;
+        &lt;name&gt;异常流量包攻击&lt;/name&gt;
+        &lt;path&gt;/&lt;/path&gt;
+        &lt;rule&gt;id.pv&gt;2.5*userMaxPv  and  id.averageRequestLength&gt;domain.averageRequestLength*20&lt;/rule&gt;
+        &lt;action&gt;online&lt;/action&gt;
+    &lt;/policy&gt;
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">id</code>: policy的一个编号，同一个域名下的policy编号不能重复。标号越小优先级越高。</li>
+  <li><code class="highlighter-rouge">name</code>： 攻击类型名称。用于标识不同类型的攻击。</li>
+  <li><code class="highlighter-rouge">path</code>： 被防护的路径，默认都是根路径，如果需要对特殊路径进行防护，设置这个参数。如果path不是根路径，rule中的特征就是一个ip访问该path的特征。</li>
+  <li><code class="highlighter-rouge">rule</code>： 分类器。</li>
+  <li><code class="highlighter-rouge">action</code>： 可以为test（测试），online（上线），offline（下线）三种状态。</li>
+</ul>
+
+<blockquote>
+  <p>注意：标准算法模型中的内容只能查看不支持修改，可以根据业务实际需求创建自定义算法模型。</p>
+</blockquote>
+
+<h2 id="3举例说明自定义算法模型">3、举例说明自定义算法模型</h2>
+
+<h3 id="31自定义算法模型创建过程">3.1、自定义算法模型创建过程</h3>
+
+<blockquote>
+  <p>1、创建自定义算法模型，为了区分不同算法模型首先应该为算法模型起名。名称不超过10个字符。同时也可以为该算法模型添加详细描述。描述不超过30个字符。<br />
+2、编辑算法模型内容。</p>
+</blockquote>
+
+<p>点击刚创建好的算法模型，可以看到如下内容：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;policy&gt;
+    &lt;id&gt;&lt;/id&gt;
+    &lt;path&gt;/&lt;/path&gt;
+    &lt;rule&gt;&lt;/rule&gt;
+    &lt;action&gt;test&lt;/action&gt;
+&lt;/policy&gt;
+</code></pre></div></div>
+<p>只需把<code class="highlighter-rouge">id</code>   <code class="highlighter-rouge">path</code>  <code class="highlighter-rouge">rule</code>  <code class="highlighter-rouge">action</code>完善即可。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">id</code>: policy的一个编号，同一个域名下的policy编号不能重复。编号越小优先级越高。自定义算法模型中的id支持100,000-1,000,000之间的整数。</li>
+  <li><code class="highlighter-rouge">path</code>： 被防护的路径，默认都是根路径，如果需要对特殊路径进行防护，设置这个参数。如果path不是根路径，rule中的特征就是一个ip访问该path的特征。</li>
+  <li><code class="highlighter-rouge">rule</code>： 分类器，一条rule就是一个逻辑表达式。rule不可以为空值。可在rule中填写对特征计算的判断。</li>
+  <li><code class="highlighter-rouge">action</code>：可以为test（测试），online（上线），offline（下线）三种状态。</li>
+</ul>
+
+<h3 id="32-rule的详细说明">3.2、 rule的详细说明</h3>
+<p>一条rule就是一个逻辑表达式(LExpression)</p>
+<blockquote>
+  <ul>
+    <li>逻辑表达式由比较表达式(CExpression)和逻辑运算符构成。</li>
+    <li>比较表达式是由算术表达式(AExpression)和比较运算符构成。</li>
+    <li>算术表达式由常量，变量，算术运算符构成。</li>
+  </ul>
+</blockquote>
+
+<p>详细见如下所示：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    LExpression = CExpression (and | or LExpression)?
+    CExpression = AExpression &gt;|&lt; AExpression
+    AExpression = Variable|Constant (+|-|*|/ Variable|Constant)?
+    Constant = 数字常量
+    Variable = clientIP[begin:end].feature | domain[begin:end].feature
+
+    LExpression可以是一个CExpression，或者是 CExpression + 逻辑运算符 + 一个或者多个LExpression组成，这里的逻辑运算符支持 and 和 or 两种操作。
+    CExpression 组成为：AExpression + 比较运算符 + AExpression，支持的比较运算符有大于(&gt;)和小于(&lt;)符号。
+    AExpression可以是一个常量、变量，或者是Variable|Constant  + 算术运算符 + Variable|Constant，支持的算术运算符有加(+)减(-)乘(*)除(/)
+    另外支持括号运算符。
+</code></pre></div></div>
+<p>示例如下：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;rule&gt;id.pv&gt;2.5*userMaxPv  and  id.averageRequestLength&gt;domain.averageRequestLength*20&lt;/rule&gt;
+</code></pre></div></div>
+<h3 id="33rule中可添加的特征向量">3.3、Rule中可添加的特征向量</h3>
+
+<p>其中可添加的特征向量最多由三部分组成：1、分析特征的范围。2、主要分析特征。3、实时加工计算。</p>
+
+<p>示例：</p>
+<blockquote>
+  <p>domain.requestPath.most 
+其中domain为分析特征范围，requestPath为主要分析特征，most为实时加工计算。</p>
+</blockquote>
+
+<p>如下图所示：</p>
+
+<p><img src="http://mystorepics-bucket1.stor.sinaapp.com/%E7%89%B9%E5%BE%81%E8%AF%B4%E6%98%8E.jpg" alt="此处输入图片的描述" /></p>
+
+<h4 id="以下是分析特征的范围">以下是分析特征的范围</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>变量</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clientIP</td>
+      <td>IP分析维度的用户特征</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>ID分析维度的用户特征</td>
+    </tr>
+    <tr>
+      <td>domain</td>
+      <td>域名特征</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="以下是分析特征">以下是分析特征</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>变量</th>
+      <th>备注</th>
+      <th>支持的计算</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pv</td>
+      <td>请求数</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>userMaxPV</td>
+      <td>最低分析频率</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>requestPath</td>
+      <td>请求路径</td>
+      <td>most，mrr，uniq</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>userAgent</td>
+      <td>userAgent</td>
+      <td>most，mrr，uniq</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>referer</td>
+      <td>referer</td>
+      <td>most，mrr，uniq</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>urlPattern</td>
+      <td>urlPattern</td>
+      <td>most，mrr，uniq</td>
+      <td>most，mrr，uniq</td>
+    </tr>
+    <tr>
+      <td>requestUri</td>
+      <td>requestUri</td>
+      <td>most，mrr，uniq</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>dangerousUserAgentCount</td>
+      <td>危险UserAgent</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>uriHtmlCount</td>
+      <td>HTML文件数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>uriActiveCount</td>
+      <td>动态文件数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>uriStaticCount</td>
+      <td>静态文件数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2xxHttpCodeCount</td>
+      <td>2xx状态码数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>3xxHttpCodeCount</td>
+      <td>3xx状态码数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4xxHttpCodeCount</td>
+      <td>4xx状态码数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5xxHttpCodeCount</td>
+      <td>5xx状态码数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>404sHttpCodeCount</td>
+      <td>404状态码数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>averageResponseBodyByteSent</td>
+      <td>平均HTTP响应包大小</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>averageRequestTime</td>
+      <td>平均HTTP响应时间</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>averageResponseTime</td>
+      <td>平均HTTP请求时间</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>averageRequestLength</td>
+      <td>平均HTTP请求长度</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>getMethod</td>
+      <td>get请求数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>postMethod</td>
+      <td>post请求数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>headMethod</td>
+      <td>head请求数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>otherMethod</td>
+      <td>other请求数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>clickFarm</td>
+      <td>刷单请求数</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>accountEnum</td>
+      <td>账号类攻击请求数</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ajaxRequest</td>
+      <td>ajax请求数量</td>
+      <td>-</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>uriWaf</td>
+      <td>Waf类攻击数量</td>
+      <td>sql，xss，command</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="以下是实时加工计算">以下是实时加工计算</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>变量</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>most</td>
+      <td>最大相似占比</td>
+    </tr>
+    <tr>
+      <td>mrr</td>
+      <td>最大重复环占比</td>
+    </tr>
+    <tr>
+      <td>uniq</td>
+      <td>集合空间</td>
+    </tr>
+    <tr>
+      <td>hit</td>
+      <td>命中率</td>
+    </tr>
+    <tr>
+      <td>sql</td>
+      <td>SQL注入评测</td>
+    </tr>
+    <tr>
+      <td>xss</td>
+      <td>XSS评测</td>
+    </tr>
+    <tr>
+      <td>command</td>
+      <td>命令注入评测</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>如下所示：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clientIP.pv
+clientIP.requestPath.mrr
+id.pv
+clientIP.requestPath.mrr
+domain.referer.most
+</code></pre></div></div>
+
+<ul>
+  <li>clientIP.pv 表示IP分析维度下，用户的请求数。</li>
+  <li>clientIP.requestPath.mrr 表示IP分析维度下，用户的访问路径最大重复环占比。</li>
+  <li>id.pv 表示ID分析维度下，用户的请求数。</li>
+  <li>domain.referer.most表示整个域名的referer最大相似占比。</li>
+</ul>
+
+<blockquote>
+  <p>注意：如需添加多个分类器，需要添加多个policy，每个policy中仅可添加一条rule。</p>
+</blockquote>
+
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
