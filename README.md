@@ -17,6 +17,8 @@ $ jekyll serve         # 访问 http://127.0.0.1:4000/
 $ jekyll serve --host xxx --port xx
 ```
 
+开发完毕后，首先进行代码的commit和push操作
+
 ## 部署
 
 首次本地开发部署，需保证本地有release分支，并且已更新到最新版本
