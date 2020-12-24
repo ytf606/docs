@@ -88,36 +88,86 @@
 			<article class="content">
 				<h3 id="说明">说明</h3>
 <blockquote>
-  <p>接口以POST方式调用，body格式为json。</p>
+  <p>接口以POST方式调用，body格式为json，其中旧字段名将于后续版本中删除。</p>
 </blockquote>
 
 <h3 id="1-request-body数据样例">1. request body数据样例</h3>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo.baishancloud.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-       </span><span class="nl">"time_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">1509379866</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"perspective_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ip"</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"perspective_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210.45.137.29"</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210.45.137.29"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/test/test.php"</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"path_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"pv"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"engine_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CC攻击"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"url_pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo.baishancloud.com/test/test.php"</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"expire"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ban"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"in_white_list"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"中国"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"安徽"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"淮北"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"相山区"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"idc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"教育网"</span><span class="p">,</span><span class="w"> 
-       </span><span class="nl">"export_ip"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"ip_credit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">is_local</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">search_engine</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">status</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">is_near</span><span class="se">\"</span><span class="s2">: true,</span><span class="se">\"</span><span class="s2">addr</span><span class="se">\"</span><span class="s2">: [{</span><span class="se">\"</span><span class="s2">province</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">安徽</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">淮北</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">district</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">相山区</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">中国</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">location</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">33.989607</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0.8171</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">116.820571</span><span class="se">\"</span><span class="s2">},</span><span class="se">\"</span><span class="s2">idc</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">教育网</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">accuracy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">街道级</span><span class="se">\"</span><span class="s2">}],</span><span class="se">\"</span><span class="s2">cache_at</span><span class="se">\"</span><span class="s2">: 1509379866,</span><span class="se">\"</span><span class="s2">export_score</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">60</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">ip</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">210.45.137.29</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">credit</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">user_count</span><span class="se">\"</span><span class="s2">: 1,</span><span class="se">\"</span><span class="s2">office</span><span class="se">\"</span><span class="s2">: 47.68,</span><span class="se">\"</span><span class="s2">family</span><span class="se">\"</span><span class="s2">: 37.990000000000002,</span><span class="se">\"</span><span class="s2">export_ip</span><span class="se">\"</span><span class="s2">: 10,</span><span class="se">\"</span><span class="s2">person</span><span class="se">\"</span><span class="s2">: 10.01,</span><span class="se">\"</span><span class="s2">dirty</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0.00</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">active</span><span class="se">\"</span><span class="s2">: 0,</span><span class="se">\"</span><span class="s2">base_station</span><span class="se">\"</span><span class="s2">: 3.16, </span><span class="se">\"</span><span class="s2">edu_station</span><span class="se">\"</span><span class="s2">: 3.16},</span><span class="se">\"</span><span class="s2">is_virus</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_abuse</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spam</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_legal</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">yes</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_black</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">yes</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_data_center</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_proxy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_tor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">is_wangba</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">trend</span><span class="se">\"</span><span class="s2">: [[1520218800, 2, </span><span class="se">\"</span><span class="s2">low</span><span class="se">\"</span><span class="s2">],[1520218800, 3, </span><span class="se">\"</span><span class="s2">low</span><span class="se">\"</span><span class="s2">]],</span><span class="se">\"</span><span class="s2">score</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">low</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">撞库</span><span class="se">\"</span><span class="s2">: 3, </span><span class="se">\"</span><span class="s2">爬虫</span><span class="se">\"</span><span class="s2">: 5},</span><span class="se">\"</span><span class="s2">latest</span><span class="se">\"</span><span class="s2">: [{</span><span class="se">\"</span><span class="s2">timestamp</span><span class="se">\"</span><span class="s2">: 1520218800, </span><span class="se">\"</span><span class="s2">hits</span><span class="se">\"</span><span class="s2">: 8, </span><span class="se">\"</span><span class="s2">score</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">low</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">爬虫</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">loc</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">上海</span><span class="se">\"</span><span class="s2">}]}"</span><span class="w">
-      </span><span class="p">}]</span><span class="w">
+	</span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+		</span><span class="nl">"time_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608793247</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"@timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T15:00:47.000+0800"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url_pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com/inc/ajax.php?ac=digg&amp;ac2=&amp;tab=vod+union+select*//**//*+null,md5(1231412414)+from+mac_manager+--%20"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url.pattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com/inc/ajax.php?ac=digg&amp;ac2=&amp;tab=vod+union+select*//**//*+null,md5(1231412414)+from+mac_manager+--%20"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SQL注入"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SQL注入"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"perspective_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ip"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"atd.key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ip"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"perspective_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124.1.1.2"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"atd.value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124.1.1.2"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"policy_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100101"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"rule.id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100101"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"pv"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.pageview_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124.1.1.2"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"124.1.1.2"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com/inc/ajax.php"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url.original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com/inc/ajax.php"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/inc/ajax.php"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url.path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/inc/ajax.php"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.risk_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"time_range"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1608793187</span><span class="p">,</span><span class="w"> </span><span class="mi">1608793247</span><span class="p">],</span><span class="w">
+		</span><span class="nl">"event.start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T14:59:47.000+0800"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T15:00:47.000+0800"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"atdrt_report_time_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T15:00:47.448+0800"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T15:00:47.448+0800"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"path_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"path_pv"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.path_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"sliding_window"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1min"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"rule.duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1min"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"expire"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"expire_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"respond.duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"atd.domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.baishancloud.com"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"service.type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"service_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"engine_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"event.action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"韩国"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.geo.country_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"韩国"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seoul-teukbyeolsi"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.geo.region_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seoul-teukbyeolsi"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.geo.district_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seoul"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.geo.city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seoul"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"idc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.as.organization.name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"export_ip"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.export_probability"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"not_ban_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"未开启拦截"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"respond.ignore_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"未开启拦截"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"action_ban"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"is_data_center"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"in_white_list"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"ip_tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+		</span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+		</span><span class="nl">"logical_operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"and"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"rule.logical_operator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"and"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"search_engine_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.search_engine_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"respond.status"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+		</span><span class="nl">"ip_credit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">is_legal</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">yes</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_local</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">latest</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">trend</span><span class="se">\"</span><span class="s2">: [[1606147200, 0, null], [1606233600, 0, null], [1606320000, 0, null], [1606406400, 0, null], [1606492800, 0, null], [1606579200, 0, null], [1606665600, 0, null], [1606752000, 0, null], [1606838400, 0, null], [1606924800, 0, null], [1607011200, 0, null], [1607097600, 0, null], [1607184000, 0, null], [1607270400, 0, null], [1607356800, 0, null], [1607443200, 0, null], [1607529600, 0, null], [1607616000, 0, null], [1607702400, 0, null], [1607788800, 0, null], [1607875200, 0, null], [1607961600, 0, null], [1608048000, 0, null], [1608134400, 0, null], [1608220800, 0, null], [1608307200, 0, null], [1608393600, 0, null], [1608480000, 0, null], [1608566400, 0, null], [1608652800, 0, null], [1608739200, 0, null]], </span><span class="se">\"</span><span class="s2">score</span><span class="se">\"</span><span class="s2">: null, </span><span class="se">\"</span><span class="s2">ip</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">124.1.1.2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">addr</span><span class="se">\"</span><span class="s2">: [{</span><span class="se">\"</span><span class="s2">country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\\</span><span class="s2">u97e9</span><span class="se">\\</span><span class="s2">u56fd</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">province</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Seoul-teukbyeolsi</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Seoul</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">district</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">accuracy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\\</span><span class="s2">u57ce</span><span class="se">\\</span><span class="s2">u5e02</span><span class="se">\\</span><span class="s2">u7ea7</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">location</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">37.572457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">126.973047</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">}, </span><span class="se">\"</span><span class="s2">idc</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">user</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">}], </span><span class="se">\"</span><span class="s2">search_engine</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">status</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">}, </span><span class="se">\"</span><span class="s2">credit</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">is_local</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">dirty</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">office</span><span class="se">\"</span><span class="s2">: 10.41, </span><span class="se">\"</span><span class="s2">family</span><span class="se">\"</span><span class="s2">: 6.59, </span><span class="se">\"</span><span class="s2">base_station</span><span class="se">\"</span><span class="s2">: 3.16, </span><span class="se">\"</span><span class="s2">edu_station</span><span class="se">\"</span><span class="s2">: 3.16, </span><span class="se">\"</span><span class="s2">person</span><span class="se">\"</span><span class="s2">: 11, </span><span class="se">\"</span><span class="s2">active</span><span class="se">\"</span><span class="s2">: 5, </span><span class="se">\"</span><span class="s2">user_count</span><span class="se">\"</span><span class="s2">: 1, </span><span class="se">\"</span><span class="s2">export_ip</span><span class="se">\"</span><span class="s2">: 10}, </span><span class="se">\"</span><span class="s2">services</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">tag_list</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">ports</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">is_near</span><span class="se">\"</span><span class="s2">: true, </span><span class="se">\"</span><span class="s2">is_black</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spam</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_proxy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_virus</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_tor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_wangba</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_data_center</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: {}, </span><span class="se">\"</span><span class="s2">is_abuse</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">export_score</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">60</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">cache_at</span><span class="se">\"</span><span class="s2">: 1608790831}"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"client.credit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">is_legal</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">yes</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_local</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">latest</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">trend</span><span class="se">\"</span><span class="s2">: [[1606147200, 0, null], [1606233600, 0, null], [1606320000, 0, null], [1606406400, 0, null], [1606492800, 0, null], [1606579200, 0, null], [1606665600, 0, null], [1606752000, 0, null], [1606838400, 0, null], [1606924800, 0, null], [1607011200, 0, null], [1607097600, 0, null], [1607184000, 0, null], [1607270400, 0, null], [1607356800, 0, null], [1607443200, 0, null], [1607529600, 0, null], [1607616000, 0, null], [1607702400, 0, null], [1607788800, 0, null], [1607875200, 0, null], [1607961600, 0, null], [1608048000, 0, null], [1608134400, 0, null], [1608220800, 0, null], [1608307200, 0, null], [1608393600, 0, null], [1608480000, 0, null], [1608566400, 0, null], [1608652800, 0, null], [1608739200, 0, null]], </span><span class="se">\"</span><span class="s2">score</span><span class="se">\"</span><span class="s2">: null, </span><span class="se">\"</span><span class="s2">ip</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">124.1.1.2</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">addr</span><span class="se">\"</span><span class="s2">: [{</span><span class="se">\"</span><span class="s2">country</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\\</span><span class="s2">u97e9</span><span class="se">\\</span><span class="s2">u56fd</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">province</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Seoul-teukbyeolsi</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Seoul</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">district</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">accuracy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\\</span><span class="s2">u57ce</span><span class="se">\\</span><span class="s2">u5e02</span><span class="se">\\</span><span class="s2">u7ea7</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">location</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">latitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">37.572457</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">longitude</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">126.973047</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">radius</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">}, </span><span class="se">\"</span><span class="s2">idc</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">user</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">-</span><span class="se">\"</span><span class="s2">}], </span><span class="se">\"</span><span class="s2">search_engine</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">status</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"\"</span><span class="s2">}, </span><span class="se">\"</span><span class="s2">credit</span><span class="se">\"</span><span class="s2">: {</span><span class="se">\"</span><span class="s2">is_local</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">dirty</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0.00</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">office</span><span class="se">\"</span><span class="s2">: 10.41, </span><span class="se">\"</span><span class="s2">family</span><span class="se">\"</span><span class="s2">: 6.59, </span><span class="se">\"</span><span class="s2">base_station</span><span class="se">\"</span><span class="s2">: 3.16, </span><span class="se">\"</span><span class="s2">edu_station</span><span class="se">\"</span><span class="s2">: 3.16, </span><span class="se">\"</span><span class="s2">person</span><span class="se">\"</span><span class="s2">: 11, </span><span class="se">\"</span><span class="s2">active</span><span class="se">\"</span><span class="s2">: 5, </span><span class="se">\"</span><span class="s2">user_count</span><span class="se">\"</span><span class="s2">: 1, </span><span class="se">\"</span><span class="s2">export_ip</span><span class="se">\"</span><span class="s2">: 10}, </span><span class="se">\"</span><span class="s2">services</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">tag_list</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">ports</span><span class="se">\"</span><span class="s2">: [], </span><span class="se">\"</span><span class="s2">is_near</span><span class="se">\"</span><span class="s2">: true, </span><span class="se">\"</span><span class="s2">is_black</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spam</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_proxy</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_virus</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_tor</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_wangba</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_data_center</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: {}, </span><span class="se">\"</span><span class="s2">is_abuse</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">is_spider</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">no</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">export_score</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">60</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">cache_at</span><span class="se">\"</span><span class="s2">: 1608790831}"</span><span class="w">
+	</span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -126,7 +176,8 @@
 <table>
   <thead>
     <tr>
-      <th>字段名</th>
+      <th>旧字段名</th>
+      <th>新字段名</th>
       <th>类型</th>
       <th>取值范围</th>
       <th>说明</th>
@@ -135,11 +186,13 @@
   <tbody>
     <tr>
       <td>host</td>
+      <td>host</td>
       <td>string</td>
       <td>-</td>
       <td>域名</td>
     </tr>
     <tr>
+      <td>info</td>
       <td>info</td>
       <td>array</td>
       <td>-</td>
@@ -147,81 +200,122 @@
     </tr>
     <tr>
       <td>info[0].time_local</td>
+      <td>info[0].@timestamp</td>
       <td>int</td>
       <td>-</td>
       <td>unix 时间戳</td>
     </tr>
     <tr>
       <td>info[0].perspective_name</td>
+      <td>info[0].”atd.key”</td>
       <td>enum</td>
       <td>[“ip”,”id”]</td>
       <td>分析维度的名称，目前ATD支持的分析维度有IP和ID两种，其中ID为用户指定的user_id、device_id等可以唯一标示一个用户的ID</td>
     </tr>
     <tr>
       <td>info[0].perspective_value</td>
+      <td>info[0].”atd.value”</td>
       <td>string</td>
       <td>-</td>
       <td>分析维度的值</td>
     </tr>
     <tr>
       <td>info[0].ip</td>
+      <td>info[0].”client.ip”</td>
       <td>string</td>
       <td>-</td>
       <td>当分析维度为IP时，值为攻击IP；当分析维度不为IP时，攻击IP可能为多个，所以值为攻击IP列表，多IP之间以,分割</td>
     </tr>
     <tr>
       <td>info[0].path</td>
+      <td>info[0].”url.path”</td>
       <td>string</td>
       <td>-</td>
       <td>被访问最多的路径</td>
     </tr>
     <tr>
       <td>info[0].path_count</td>
+      <td>info[0].”event.path_count”</td>
       <td>int</td>
       <td>-</td>
       <td>被访问最多路径的请求数</td>
     </tr>
     <tr>
       <td>info[0].pv</td>
+      <td>info[0].”event.pageview_count”</td>
       <td>int</td>
       <td>-</td>
       <td>本次时间窗⼝内的总请求数</td>
     </tr>
     <tr>
       <td>info[0].engine_type</td>
+      <td>info[0].”event.provider”</td>
       <td>enum</td>
       <td>[“policy”,”deep”,”learning”]</td>
       <td>识别本次攻击的算法引擎的名称，policy：实时引擎，deep：深度引擎，learning：学习引擎</td>
     </tr>
     <tr>
       <td>info[0].reason</td>
+      <td>info[0].”event.reason”</td>
       <td>string</td>
       <td>-</td>
       <td>命中的攻击类型，目前ATD可以识别的攻击类型包括：爬虫、账号类攻击、CC攻击、慢速攻击、异常流量包攻击、刷单类攻击、路径扫描、危险UA、SQL注入、命令注入、跨站脚本、异常路径访问等</td>
     </tr>
     <tr>
       <td>info[0].url_pattern</td>
+      <td>info[0].”url.pattern”</td>
       <td>string</td>
       <td>-</td>
       <td>路径特征，具有相同结构的url用url_pattern表示，如www.abc.com/a/123.html和www.abc.com/a/456.html的url_pattern为www.abc.com/a/*.html</td>
     </tr>
     <tr>
       <td>info[0].expire</td>
+      <td>info[0].”respond.duration”</td>
       <td>int</td>
       <td>[60-86400]</td>
       <td>被拦截IP禁用时长，IP每次被识别为威胁拦截时的禁用时长，单位为：秒。禁用时长到期后，IP解禁可继续访问</td>
     </tr>
     <tr>
       <td>info[0].score</td>
+      <td>info[0].”event.risk_score”</td>
       <td>int</td>
       <td>[1-100]</td>
       <td>威胁分数，1-25为疑似，26-55为低威胁，56-85为中威胁，86-100为高威胁</td>
     </tr>
     <tr>
       <td>info[0].action</td>
+      <td>info[0].”event.action”</td>
       <td>string</td>
       <td>-</td>
       <td>命中的攻击判定策略配置的处理动作</td>
+    </tr>
+    <tr>
+      <td>info[0].time_range</td>
+      <td> </td>
+      <td>int</td>
+      <td>-</td>
+      <td>时间窗口</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>info[0].event.start</td>
+      <td>string</td>
+      <td>-</td>
+      <td>窗口开始</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>info[0].event.end</td>
+      <td>string</td>
+      <td>-</td>
+      <td>窗口结束</td>
+    </tr>
+    <tr>
+      <td>info[0].atdrt_report_time_local</td>
+      <td>info[0].event.created</td>
+      <td>string</td>
+      <td>-</td>
+      <td>事件产生时间</td>
     </tr>
   </tbody>
 </table>
@@ -231,7 +325,8 @@
 <table>
   <thead>
     <tr>
-      <th>字段名</th>
+      <th>旧字段名</th>
+      <th>新字段名</th>
       <th>类型</th>
       <th>取值范围</th>
       <th>解释</th>
@@ -240,360 +335,427 @@
   <tbody>
     <tr>
       <td>info[0].in_white_list</td>
+      <td> </td>
       <td>boolean</td>
       <td>[true,false]</td>
       <td>是否在⽩名单中</td>
     </tr>
     <tr>
+      <td>info[0].is_data_center</td>
+      <td> </td>
+      <td>enum</td>
+      <td>[“yes”, “no”]</td>
+      <td>是否是数据中心/云服务商</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>info[0].tags</td>
+      <td>enum</td>
+      <td>[‘abuse’, ‘black’, ‘c2’, ‘local’, ‘proxy’, ‘spam’, ‘spider’, ‘tor’, ‘virus’, ‘wangba’, ‘white_list’, ‘ban’]</td>
+      <td>关于事件或ip的若干标签</td>
+    </tr>
+    <tr>
       <td>info[0].country</td>
+      <td>info[0].”client.geo.country_name”</td>
       <td>string</td>
       <td>-</td>
       <td>国家</td>
     </tr>
     <tr>
       <td>info[0].province</td>
+      <td>info[0].”client.geo.region_name”</td>
       <td>string</td>
       <td>-</td>
       <td>省</td>
     </tr>
     <tr>
       <td>info[0].city</td>
+      <td>info[0].”client.geo.city_name”</td>
       <td>string</td>
       <td>-</td>
       <td>市</td>
     </tr>
     <tr>
       <td>info[0].district</td>
+      <td>info[0].”client.geo.district_name”</td>
       <td>string</td>
       <td>-</td>
       <td>区</td>
     </tr>
     <tr>
       <td>info[0].idc</td>
+      <td>info[0].”client.as.organization.name”</td>
       <td>string</td>
       <td>-</td>
       <td>机房或网络运营商</td>
     </tr>
     <tr>
-      <td>info[0].is_data_center</td>
-      <td>enum</td>
-      <td>[“yes”, “no”]</td>
-      <td>是否是数据中心/云服务商</td>
-    </tr>
-    <tr>
       <td>info[0].export_ip</td>
+      <td>info[0].”client.export_probability”</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>人群出口IP的概率，返回的数据中省略了%，推荐参考值，当该值大于60时可以认为是人群出口IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit</td>
+      <td>info[0].”client.credit”</td>
       <td>object</td>
       <td>-</td>
       <td>IP信⽤等级数据，json格式，需解析</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_local</td>
+      <td>info[0].”client.credit”.is_local</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>是否为内网IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.search_engine</td>
+      <td>info[0].”client.credit”.search_engine</td>
       <td>object</td>
       <td>-</td>
       <td>搜索引擎IP信息</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.search_engine.status</td>
+      <td>info[0].”client.credit”.search_engine.status</td>
       <td>enum</td>
       <td>[“yes”,”no”,””]</td>
       <td>当前IP是否为健康的搜索引擎爬虫IP，”yes”：健康的搜索引擎IP，”no”：恶意的搜索引擎IP，”“：不是搜索引擎IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.search_engine.name</td>
+      <td>info[0].”client.credit”.search_engine.name</td>
       <td>string</td>
       <td>-</td>
       <td>具体的搜索引擎名称</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_near</td>
+      <td>info[0].”client.credit”.is_near</td>
       <td>boolean</td>
       <td>[true,false]</td>
       <td>内部临时数据，可忽略</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr</td>
+      <td>info[0].”client.credit”.addr</td>
       <td>array</td>
       <td>-</td>
       <td>IP地址信息</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].province</td>
+      <td>info[0].”client.credit”.addr[0].province</td>
       <td>string</td>
       <td>-</td>
       <td>省份</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].city</td>
+      <td>info[0].”client.credit”.addr[0].city</td>
       <td>string</td>
       <td>-</td>
       <td>城市</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].district</td>
+      <td>info[0].”client.credit”.addr[0].district</td>
       <td>string</td>
       <td>-</td>
       <td>地区</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].country</td>
+      <td>info[0].”client.credit”.addr[0].country</td>
       <td>string</td>
       <td>-</td>
       <td>国家</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].location</td>
+      <td>info[0].”client.credit”.addr[0].location</td>
       <td>object</td>
       <td>-</td>
       <td>IP地理位置信息</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].location.latitude</td>
+      <td>info[0].”client.credit”.addr[0].location.latitude</td>
       <td>float</td>
       <td>-</td>
       <td>IP的纬度</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].location.radius</td>
+      <td>info[0].”client.credit”.addr[0].location.radius</td>
       <td>float</td>
       <td>-</td>
       <td>IP覆盖范围半径，单位：KM</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].location.longitude</td>
+      <td>info[0].”client.credit”.addr[0].location.longitude</td>
       <td>float</td>
       <td>-</td>
       <td>IP的经度</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].idc</td>
+      <td>info[0].”client.credit”.addr[0].idc</td>
       <td>string</td>
       <td>-</td>
       <td>机房或网络运营商</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.addr[0].accuracy</td>
+      <td>info[0].”client.credit”.addr[0].accuracy</td>
       <td>enum</td>
       <td>[“洲”,”国家”,”省”,”城市”,”区县”,”街道”]</td>
       <td>地理位置的精确度</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.cache_at</td>
+      <td>info[0].”client.credit”.cache_at</td>
       <td>int</td>
       <td>-</td>
       <td>内部临时数据，可忽略</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.export_score</td>
+      <td>info[0].”client.credit”.export_score</td>
       <td>string</td>
       <td>-</td>
       <td>内部临时数据，可忽略</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.ip</td>
+      <td>info[0].”client.credit”.ip</td>
       <td>string</td>
       <td>-</td>
       <td>返回的IP,如果</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit</td>
+      <td>info[0].”client.credit”.credit</td>
       <td>object</td>
       <td>-</td>
       <td>IP信用数据</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.user_count</td>
+      <td>info[0].”client.credit”.credit.user_count</td>
       <td>int</td>
       <td>[1-9]</td>
       <td>人数范围标识：’1’:’1’，’2’:’2-5’，’3’:’6-10’，’4’:’11-30’，’5’:’31-50’，’6’:’51-100’，’7’:’101-500’，’8’:’501-2000’，’9’:’2000+’</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.office</td>
+      <td>info[0].”client.credit”.credit.office</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP为办公网的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.family</td>
+      <td>info[0].”client.credit”.credit.family</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP为住宅小区的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.export_ip</td>
+      <td>info[0].”client.credit”.credit.export_ip</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP为人群出口的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.person</td>
+      <td>info[0].”client.credit”.credit.person</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP为真人的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.dirty</td>
+      <td>info[0].”client.credit”.credit.dirty</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP的污点概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.active</td>
+      <td>info[0].”client.credit”.credit.active</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP的活跃度</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.base_station</td>
+      <td>info[0].”client.credit”.credit.base_station</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP是基站的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.credit.edu_station</td>
+      <td>info[0].”client.credit”.credit.edu_station</td>
       <td>float</td>
       <td>[0-100]</td>
       <td>当前IP是教育网的概率</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_virus</td>
+      <td>info[0].”client.credit”.is_virus</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否有病毒标签</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_abuse</td>
+      <td>info[0].”client.credit”.is_abuse</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否有恶意活动标签</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_spider</td>
+      <td>info[0].”client.credit”.is_spider</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否有爬虫标签</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_spam</td>
+      <td>info[0].”client.credit”.is_spam</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否有垃圾邮件标签</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_legal</td>
+      <td>info[0].”client.credit”.is_legal</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否符合语法标准</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_black</td>
+      <td>info[0].”client.credit”.is_black</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否为高危IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_data_center</td>
+      <td>info[0].”client.credit”.is_data_center</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否为数据中心IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_proxy</td>
+      <td>info[0].”client.credit”.is_proxy</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否为代理IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_tor</td>
+      <td>info[0].”client.credit”.is_tor</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否为洋葱路由IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.is_wangba</td>
+      <td>info[0].”client.credit”.is_wangba</td>
       <td>enum</td>
       <td>[“yes”,”no”]</td>
       <td>传入IP是否为网吧IP</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.trend</td>
+      <td>info[0].”client.credit”.trend</td>
       <td>array</td>
       <td>-</td>
       <td>威胁趋势</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.trend[0][0]</td>
+      <td>info[0].”client.credit”.trend[0][0]</td>
       <td>int</td>
       <td>-</td>
       <td>日期0点时间戳</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.trend[0][1]</td>
+      <td>info[0].”client.credit”.trend[0][1]</td>
       <td>int</td>
       <td>-</td>
       <td>记录数量</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.trend[0][2]</td>
+      <td>info[0].”client.credit”.trend[0][2]</td>
       <td>enum</td>
       <td>[“low”,”medium”,”high”,null]</td>
       <td>威胁等级</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.score</td>
+      <td>info[0].”client.credit”.score</td>
       <td>enum</td>
       <td>[“low”,”medium”,”high”,null]</td>
       <td>威胁等级</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.type</td>
+      <td>info[0].”client.credit”.type</td>
       <td>dict</td>
       <td>-</td>
       <td>历史威胁事件名称和计数的key-val对</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest</td>
+      <td>info[0].”client.credit”.latest</td>
       <td>array</td>
       <td>-</td>
       <td>近期威胁事件记录</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest[0].timestamp</td>
+      <td>info[0].”client.credit”.latest[0].timestamp</td>
       <td>int</td>
       <td>-</td>
       <td>更新时间戳</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest[0].hits</td>
+      <td>info[0].”client.credit”.latest[0].hits</td>
       <td>int</td>
       <td>-</td>
       <td>命中次数</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest[0].score</td>
+      <td>info[0].”client.credit”.latest[0].score</td>
       <td>enum</td>
       <td>[“low”,”medium”,”high”,null]</td>
       <td>威胁等级</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest[0].type</td>
+      <td>info[0].”client.credit”.latest[0].type</td>
       <td>string</td>
       <td>-</td>
       <td>威胁事件名称</td>
     </tr>
     <tr>
       <td>info[0].ip_credit.latest[0].loc</td>
+      <td>info[0].”client.credit”.latest[0].loc</td>
       <td>string</td>
       <td>-</td>
       <td>攻击源地理位置</td>
@@ -658,30 +820,82 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@bs203 ~]# curl http://172.18.1.203:8001/v1/firewall/action -d '
 {
-    "host": "demo.baishancloud.com",
-    "info": [{
-       "time_local": 1509379866, 
-       "perspective_name": "ip", 
-       "perspective_value": "210.45.137.29", 
-       "ip": "210.45.137.29",
-       "path": "/test/test.php", 
-       "path_count": 1,
-       "pv": 29, 
-       "engine_type": "policy",
-       "reason": "CC攻击",
-       "url_pattern": "demo.baishancloud.com/test/test.php", 
-       "expire": 1800,
-       "score": 80,
-       "action": "ban",
-       "in_white_list": false,
-       "country": "中国",
-       "province": "安徽",
-       "city": "淮北",
-       "district": "相山区",
-       "idc": "教育网", 
-       "export_ip": 10,
-       "ip_credit": "{\"is_local\": \"no\",\"search_engine\": {\"status\": \"\",\"name\": \"\"},\"is_near\": true,\"addr\": [{\"province\": \"安徽\",\"city\": \"淮北\",\"district\": \"相山区\",\"country\": \"中国\",\"location\": {\"latitude\": \"33.989607\",\"radius\": \"0.8171\",\"longitude\": \"116.820571\"},\"idc\": \"教育网\",\"accuracy\": \"街道级\"}],\"cache_at\": 1509379866,\"export_score\": \"60\",\"ip\": \"210.45.137.29\",\"credit\": {\"user_count\": 1,\"office\": 47.68,\"family\": 37.990000000000002,\"export_ip\": 10,\"person\": 10.01,\"dirty\": \"0.00\",\"active\": 0, \"base_station\": 3.16, \"edu_station\": 3.16},\"is_virus\": \"no\",\"is_abuse\": \"no\", \"is_spider\": \"no\", \"is_spam\": \"no\",\"is_legal\": \"yes\",\"is_black\": \"yes\",\"is_data_center\": \"no\",\"is_proxy\": \"no\",\"is_tor\": \"no\",\"is_wangba\": \"no\",\"trend\": [[1520218800, 2, \"low\"],[1520218800, 3, \"low\"]],\"score\": \"low\",\"type\": {\"撞库\": 3, \"爬虫\": 5},\"latest\": [{\"timestamp\": 1520218800, \"hits\": 8, \"score\": \"low\", \"type\": \"爬虫\", \"loc\": \"上海\"}]}"
-      }]
+	"host": "test.baishancloud.com",
+	"info": [{
+		"time_local": 1608793247,
+		"@timestamp": "2020-12-24T15:00:47.000+0800",
+		"url_pattern": "test.baishancloud.com/inc/ajax.php?ac=digg&amp;ac2=&amp;tab=vod+union+select*//**//*+null,md5(1231412414)+from+mac_manager+--%20",
+		"url.pattern": "test.baishancloud.com/inc/ajax.php?ac=digg&amp;ac2=&amp;tab=vod+union+select*//**//*+null,md5(1231412414)+from+mac_manager+--%20",
+		"reason": "SQL注入",
+		"event.reason": "SQL注入",
+		"perspective_name": "ip",
+		"atd.key": "ip",
+		"perspective_value": "124.1.1.2",
+		"atd.value": "124.1.1.2",
+		"policy_id": "100101",
+		"rule.id": "100101",
+		"pv": 20,
+		"event.pageview_count": 20,
+		"ip": "124.1.1.2",
+		"client.ip": "124.1.1.2",
+		"url": "test.baishancloud.com/inc/ajax.php",
+		"url.original": "test.baishancloud.com/inc/ajax.php",
+		"path": "/inc/ajax.php",
+		"url.path": "/inc/ajax.php",
+		"score": 100,
+		"event.risk_score": 100,
+		"time_range": [1608793187, 1608793247],
+		"event.start": "2020-12-24T14:59:47.000+0800",
+		"event.end": "2020-12-24T15:00:47.000+0800",
+		"atdrt_report_time_local": "2020-12-24T15:00:47.448+0800",
+		"event.created": "2020-12-24T15:00:47.448+0800",
+		"path_count": 1,
+		"path_pv": 1,
+		"event.path_count": 1,
+		"sliding_window": "1min",
+		"rule.duration": "1min",
+		"expire": 1800,
+		"expire_time": 1800,
+		"respond.duration": 1800,
+		"host": "test.baishancloud.com",
+		"atd.domain": "test.baishancloud.com",
+		"service": "web",
+		"service.type": "web",
+		"service_category": "web",
+		"event.type": "web",
+		"engine_type": "policy",
+		"event.provider": "policy",
+		"action": "online",
+		"event.action": "online",
+		"country": "韩国",
+		"client.geo.country_name": "韩国",
+		"province": "Seoul-teukbyeolsi",
+		"client.geo.region_name": "Seoul-teukbyeolsi",
+		"district": "-",
+		"client.geo.district_name": "-",
+		"city": "Seoul",
+		"client.geo.city_name": "Seoul",
+		"idc": "-",
+		"client.as.organization.name": "-",
+		"export_ip": 10,
+		"client.export_probability": 10,
+		"not_ban_reason": "未开启拦截",
+		"respond.ignore_reason": "未开启拦截",
+		"action_ban": false,
+		"is_data_center": "no",
+		"in_white_list": false,
+		"ip_tag": [],
+		"tags": [],
+		"logical_operator": "and",
+		"rule.logical_operator": "and",
+		"search_engine_name": "",
+		"client.search_engine_name": "",
+		"respond.status": [],
+		"activeLearning": "{\"model_status\": \"not ready\"}",
+		"_id": "1608793247_test.baishancloud.com_ip_124.1.1.2_lqi9Xl",
+		"ip_credit": "{\"is_legal\": \"yes\", \"is_local\": \"no\", \"latest\": [], \"trend\": [[1606147200, 0, null], [1606233600, 0, null], [1606320000, 0, null], [1606406400, 0, null], [1606492800, 0, null], [1606579200, 0, null], [1606665600, 0, null], [1606752000, 0, null], [1606838400, 0, null], [1606924800, 0, null], [1607011200, 0, null], [1607097600, 0, null], [1607184000, 0, null], [1607270400, 0, null], [1607356800, 0, null], [1607443200, 0, null], [1607529600, 0, null], [1607616000, 0, null], [1607702400, 0, null], [1607788800, 0, null], [1607875200, 0, null], [1607961600, 0, null], [1608048000, 0, null], [1608134400, 0, null], [1608220800, 0, null], [1608307200, 0, null], [1608393600, 0, null], [1608480000, 0, null], [1608566400, 0, null], [1608652800, 0, null], [1608739200, 0, null]], \"score\": null, \"ip\": \"124.1.1.2\", \"addr\": [{\"country\": \"\\u97e9\\u56fd\", \"province\": \"Seoul-teukbyeolsi\", \"city\": \"Seoul\", \"district\": \"-\", \"accuracy\": \"\\u57ce\\u5e02\\u7ea7\", \"location\": {\"latitude\": \"37.572457\", \"longitude\": \"126.973047\", \"radius\": \"\"}, \"idc\": \"-\", \"user\": \"-\"}], \"search_engine\": {\"name\": \"\", \"status\": \"\"}, \"credit\": {\"is_local\": \"no\", \"dirty\": \"0.00\", \"office\": 10.41, \"family\": 6.59, \"base_station\": 3.16, \"edu_station\": 3.16, \"person\": 11, \"active\": 5, \"user_count\": 1, \"export_ip\": 10}, \"services\": [], \"tag_list\": [], \"ports\": [], \"is_near\": true, \"is_black\": \"no\", \"is_spam\": \"no\", \"is_proxy\": \"no\", \"is_virus\": \"no\", \"is_tor\": \"no\", \"is_wangba\": \"no\", \"is_data_center\": \"no\", \"type\": {}, \"is_abuse\": \"no\", \"is_spider\": \"no\", \"export_score\": \"60\", \"cache_at\": 1608790831}",
+		"client.credit": "{\"is_legal\": \"yes\", \"is_local\": \"no\", \"latest\": [], \"trend\": [[1606147200, 0, null], [1606233600, 0, null], [1606320000, 0, null], [1606406400, 0, null], [1606492800, 0, null], [1606579200, 0, null], [1606665600, 0, null], [1606752000, 0, null], [1606838400, 0, null], [1606924800, 0, null], [1607011200, 0, null], [1607097600, 0, null], [1607184000, 0, null], [1607270400, 0, null], [1607356800, 0, null], [1607443200, 0, null], [1607529600, 0, null], [1607616000, 0, null], [1607702400, 0, null], [1607788800, 0, null], [1607875200, 0, null], [1607961600, 0, null], [1608048000, 0, null], [1608134400, 0, null], [1608220800, 0, null], [1608307200, 0, null], [1608393600, 0, null], [1608480000, 0, null], [1608566400, 0, null], [1608652800, 0, null], [1608739200, 0, null]], \"score\": null, \"ip\": \"124.1.1.2\", \"addr\": [{\"country\": \"\\u97e9\\u56fd\", \"province\": \"Seoul-teukbyeolsi\", \"city\": \"Seoul\", \"district\": \"-\", \"accuracy\": \"\\u57ce\\u5e02\\u7ea7\", \"location\": {\"latitude\": \"37.572457\", \"longitude\": \"126.973047\", \"radius\": \"\"}, \"idc\": \"-\", \"user\": \"-\"}], \"search_engine\": {\"name\": \"\", \"status\": \"\"}, \"credit\": {\"is_local\": \"no\", \"dirty\": \"0.00\", \"office\": 10.41, \"family\": 6.59, \"base_station\": 3.16, \"edu_station\": 3.16, \"person\": 11, \"active\": 5, \"user_count\": 1, \"export_ip\": 10}, \"services\": [], \"tag_list\": [], \"ports\": [], \"is_near\": true, \"is_black\": \"no\", \"is_spam\": \"no\", \"is_proxy\": \"no\", \"is_virus\": \"no\", \"is_tor\": \"no\", \"is_wangba\": \"no\", \"is_data_center\": \"no\", \"type\": {}, \"is_abuse\": \"no\", \"is_spider\": \"no\", \"export_score\": \"60\", \"cache_at\": 1608790831}"
+	}]
 }
 '
 {
