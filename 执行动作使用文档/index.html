@@ -93,7 +93,7 @@
 
 <p>1、标准模式，字段请参考查询结果,示例如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: {
   "hits": {
     "total": 621,
     "hits": [
@@ -139,7 +139,7 @@
 
 <p>2、智能模式，字段示例如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: [{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>payload: [{
     field: "avg_body_bytes_sent",
     label: "平均后端响应长度",
     result: "突增",
@@ -174,7 +174,7 @@
 </span></code></pre></div></div>
 
 <p>2、在对象数组内的结果
-对于想获取对象数组内的值，可用{{#obj_key}}{{value}}{{/obj_key}}包裹，的前后可加符号进行分割。在此需要注意obj_key代表需要循环获取目标内容的数组的key，并且对于数组的循环以<code class="highlighter-rouge">#</code>代表开始，以<code class="highlighter-rouge">/</code>代表结束，每个数组元素输出结果单独一行。</p>
+对于想获取对象数组内的值，可用{{#obj_key}}{{value}}{{/obj_key}}包裹，的前后可加符号进行分割。在此需要注意obj_key代表需要循环获取目标内容的数组的key，并且对于数组的循环以<code class="language-plaintext highlighter-rouge">#</code>代表开始，以<code class="language-plaintext highlighter-rouge">/</code>代表结束，每个数组元素输出结果单独一行。</p>
 
 <p>输入内容：</p>
 
@@ -198,7 +198,7 @@
 <p>自定义执行函数需要定义一个执行函数，支持JavaScript语法。</p>
 
 <h4 id="执行函数参数">执行函数参数</h4>
-<p>该函数的输入参数是<code class="highlighter-rouge">执行事件结果说明</code>中的payload</p>
+<p>该函数的输入参数是<code class="language-plaintext highlighter-rouge">执行事件结果说明</code>中的payload</p>
 <h4 id="执行函数主体">执行函数主体</h4>
 <p>在函数内，可根据payload，自定义不同情况下的执行动作。
 目前产品内支持多种封装后的操作函数，包括：</p>

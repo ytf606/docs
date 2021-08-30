@@ -105,7 +105,7 @@
   <p>3、日志对接分为三步：</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>（1）日志格式配置，即根据原始日志进行日志类型匹配和字段映射设置，以便ATD可以成功解析您的日志；
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>（1）日志格式配置，即根据原始日志进行日志类型匹配和字段映射设置，以便ATD可以成功解析您的日志；
 
 （2）日志对接配置，即配置TopicName、Zookeeper地址等，以便ATD知道从哪里可以获取到您推送的日志；
 
@@ -132,7 +132,7 @@
 
 <p><strong>（1）日志样例</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>124.239.189.15 - [2016-07-16T15:56:04+08:00] 2ab80c0cf.yunlian.io "GET /adf/ad.php?abc=select+*+from+information_schema+where+1&amp;testlogintest=test HTTP/1.1" 0.011 401 173 201 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.15.3 zlib/1.2.3 libidn/1.18 libssh2/1.4.2" "-"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>124.239.189.15 - [2016-07-16T15:56:04+08:00] 2ab80c0cf.yunlian.io "GET /adf/ad.php?abc=select+*+from+information_schema+where+1&amp;testlogintest=test HTTP/1.1" 0.011 401 173 201 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.15.3 zlib/1.2.3 libidn/1.18 libssh2/1.4.2" "-"
 </code></pre></div></div>
 <p><strong>（2）log_format字段</strong></p>
 
@@ -256,12 +256,12 @@
 
 <p>原始日志：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>124.239.189.15 - [2016-07-16T15:56:04+08:00] 2ab80c0cf.yunlian.io "GET /adf/ad.php?abc=select+*+from+information_schema+where+1&amp;testlogintest=test HTTP/1.1" 0.011 401 173 201 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.15.3 zlib/1.2.3 libidn/1.18 libssh2/1.4.2" "-"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>124.239.189.15 - [2016-07-16T15:56:04+08:00] 2ab80c0cf.yunlian.io "GET /adf/ad.php?abc=select+*+from+information_schema+where+1&amp;testlogintest=test HTTP/1.1" 0.011 401 173 201 "-" "curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.15.3 zlib/1.2.3 libidn/1.18 libssh2/1.4.2" "-"
 </code></pre></div></div>
 
 <p>log_format：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$remote_addr $remote_user [$time_local] $http_host "$method $request_uri $http" $request_time $status $body_bytes_sent $request_length "$http_referer" "$http_user_agent" "$http_x_forwarded_for"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$remote_addr $remote_user [$time_local] $http_host "$method $request_uri $http" $request_time $status $body_bytes_sent $request_length "$http_referer" "$http_user_agent" "$http_x_forwarded_for"
 </code></pre></div></div>
 
 <p><img src="/docs/images/log/parse2.png" alt="logformat解析" /></p>
@@ -290,12 +290,12 @@
 <h3 id="3正则表达式">3、正则表达式</h3>
 <p><strong>（1）日志样例</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jan 31 15:39:54 xm11-112 sshd[4187]: Received disconnect from 172.18.14.184 port 62750:11: disconnected by user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jan 31 15:39:54 xm11-112 sshd[4187]: Received disconnect from 172.18.14.184 port 62750:11: disconnected by user
 </code></pre></div></div>
 
 <p><strong>（2）配置示例</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(?&lt;date&gt;\w{3}\s+\d{1,2}\s\d\d:\d\d:\d\d)\s(?&lt;dst&gt;\S+)\s+(?&lt;pid&gt;[^:]*):\s+(?&lt;message&gt;.*)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(?&lt;date&gt;\w{3}\s+\d{1,2}\s\d\d:\d\d:\d\d)\s(?&lt;dst&gt;\S+)\s+(?&lt;pid&gt;[^:]*):\s+(?&lt;message&gt;.*)
 </code></pre></div></div>
 
 <p><img src="/docs/images/log/parse4.png" alt="正则解析" /></p>
@@ -303,7 +303,7 @@
 <h3 id="4分隔符">4、分隔符</h3>
 <p><strong>（1）日志样例</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18:21:02 [pid:123] [MOC]ip=1.1.1.1,host=bjp123,message=loginsuccess
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18:21:02 [pid:123] [MOC]ip=1.1.1.1,host=bjp123,message=loginsuccess
 </code></pre></div></div>
 
 <p><strong>（2）配置示例</strong></p>

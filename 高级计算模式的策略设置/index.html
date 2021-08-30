@@ -127,7 +127,7 @@
 <ol>
   <li>选择索引，选择数据所在的索引。</li>
   <li>编辑框内，填写ES查询的body体，查询语句遵循标准的ES查询标准，示例如下：
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
    "query": {
      "bool": {
        "must": [
@@ -174,7 +174,7 @@
 </blockquote>
 
 <p>一个简单的触发函数，示例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
     let result = "payload.hits.total=" + payload.hits.total
     if (payload.hits.total &gt; 5) {
         return result;
@@ -194,7 +194,7 @@
   </li>
   <li>实现：
   ##### 设置查询条件：
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
     "query": {
       "bool": {
         "must": [
@@ -226,7 +226,7 @@
   }
 </code></pre></div>    </div>
     <p>##### 查询结果如下：</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
     "took": 1,
     "timed_out": false,
     "_shards": {
@@ -251,7 +251,7 @@
   }
 </code></pre></div>    </div>
     <p>##### 定义触发条件：</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function trigger(payload) {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function trigger(payload) {
       let count_5xx = 0;
       let request_count = 0;
       let proportion, result;
@@ -285,7 +285,7 @@
   </li>
   <li>实现：
   ##### 设置查询条件：
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
     "query": {
       "bool": {
         "must": [
@@ -312,7 +312,7 @@
   }
 </code></pre></div>    </div>
     <p>##### 查询结果如下：</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
     "took": 3,
     "timed_out": false,
     "_shards": {
@@ -334,36 +334,36 @@
   }
 </code></pre></div>    </div>
     <p>##### 定义触发条件：</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">const</span> <span class="no">normal_5xx_count</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-      <span class="k">const</span> <span class="no">normal_5xx_proportion</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
-      <span class="k">const</span> <span class="no">cache_storage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CacheStorage</span><span class="p">(</span><span class="s1">'event'</span><span class="p">);</span>
-      <span class="nx">let</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">()</span><span class="o">.</span><span class="nx">unix</span><span class="p">();</span>
-      <span class="c1">//存当前数据</span>
-      <span class="nx">let</span> <span class="nb">key</span> <span class="o">=</span> <span class="s1">'5xx_count_'</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM-DDHH:mm"</span><span class="p">);</span>
-      <span class="nx">let</span> <span class="nx">value</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="p">[</span><span class="s2">"5xx_count_agg"</span><span class="p">])</span> <span class="p">{</span>
-          <span class="nx">value</span> <span class="o">=</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="p">[</span><span class="s2">"5xx_count_agg"</span><span class="p">]</span><span class="o">.</span><span class="nx">value</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
-      <span class="nx">data</span><span class="o">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
-      <span class="nx">data</span><span class="o">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'5XX数量'</span><span class="p">;</span>
-      <span class="nx">cache_storage</span><span class="o">.</span><span class="nx">set</span><span class="p">(</span><span class="nb">key</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
-      <span class="c1">//取5分钟前数据</span>
-      <span class="nx">let</span> <span class="nx">pre_key</span> <span class="o">=</span> <span class="s1">'5xx_count_'</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="nx">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'minutes'</span><span class="p">)</span><span class="o">.</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM-DDHH:mm"</span><span class="p">);</span>
-      <span class="nx">let</span> <span class="nx">pre_data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">cache_storage</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">pre_key</span><span class="p">);</span>
-      <span class="nx">let</span> <span class="nx">pre_value</span> <span class="o">=</span> <span class="nx">pre_data</span> <span class="o">&amp;&amp;</span> <span class="nx">pre_data</span><span class="o">.</span><span class="nx">value</span><span class="p">;</span>
-      <span class="c1">//比较</span>
-      <span class="nx">let</span> <span class="nx">rising_value</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">-</span> <span class="nx">pre_value</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&lt;</span> <span class="nx">normal_5xx_count</span> <span class="o">||</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="nx">pre_data</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">pre_value</span> <span class="o">&amp;&amp;</span> <span class="nx">rising_value</span> <span class="o">/</span> <span class="nx">pre_value</span> <span class="o">&gt;=</span> <span class="nx">normal_5xx_proportion</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">let</span> <span class="nx">rising_proportion</span> <span class="o">=</span> <span class="p">((</span><span class="nx">rising_value</span> <span class="o">/</span> <span class="nx">pre_value</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"%"</span><span class="p">;</span>
-          <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s1">'当前5XX数量：'</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">'，5分钟前5XX数量：'</span> <span class="o">+</span> <span class="nx">pre_value</span> <span class="o">+</span> <span class="s2">"增加："</span> <span class="o">+</span>  <span class="nx">rising_proportion</span><span class="p">;</span>
-          <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  async function trigger(payload) {
+      const normal_5xx_count = 1000;
+      const normal_5xx_proportion = 0.2;
+      const cache_storage = new CacheStorage('event');
+      let timestamp = moment().unix();
+      //存当前数据
+      let key = '5xx_count_' + moment(timestamp * 1000).format("MM-DDHH:mm");
+      let value;
+      if (payload.aggregations &amp;&amp; payload.aggregations["5xx_count_agg"]) {
+          value = payload.aggregations["5xx_count_agg"].value;
+      }
+      let data = {};
+      data.value = value;
+      data.name = '5XX数量';
+      cache_storage.set(key, data);
+      //取5分钟前数据
+      let pre_key = '5xx_count_' + moment(timestamp * 1000).subtract(5, 'minutes').format("MM-DDHH:mm");
+      let pre_data = await cache_storage.get(pre_key);
+      let pre_value = pre_data &amp;&amp; pre_data.value;
+      //比较
+      let rising_value = value - pre_value;
+      if (value &lt; normal_5xx_count || value &lt; pre_data) {
+          return false;
+      }
+      if (pre_value &amp;&amp; rising_value / pre_value &gt;= normal_5xx_proportion) {
+          let rising_proportion = ((rising_value / pre_value) * 100).toFixed(2) + "%";
+          let result = '当前5XX数量：' + value + '，5分钟前5XX数量：' + pre_value + "增加：" +  rising_proportion;
+          return result;
+      }
+  }
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -380,15 +380,15 @@ data: {
 }</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">-</span> <span class="nx">思路</span><span class="err">：</span>
-  <span class="o">-</span> <span class="nx">选择该事件数据来源的索引</span> <span class="o">-</span> <span class="nx">atd</span><span class="o">-</span><span class="nx">event</span><span class="o">-</span><span class="nx">online</span><span class="o">-*</span>
-  <span class="o">-</span> <span class="nx">编写Elasticsearch查询条件</span><span class="err">。</span><span class="nx">根据描述可知</span><span class="err">，</span><span class="nx">时间范围为每分钟</span><span class="err">，</span><span class="nx">需要查询得到类型为web</span><span class="err">，</span><span class="nx">按IP维度聚合并按请求数降序排序的TOP5威胁事件</span><span class="err">。</span>
-  <span class="o">-</span> <span class="nx">编写触发函数</span><span class="err">。</span><span class="nx">根据描述可知需要对TOP5的IP进行调用接口</span><span class="err">，</span><span class="nx">并对接口返回进行判断</span><span class="err">，</span><span class="nx">若满足条件则触发事件返回需要记录的信息</span><span class="err">。</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- 思路：
+  - 选择该事件数据来源的索引 - atd-event-online-*
+  - 编写Elasticsearch查询条件。根据描述可知，时间范围为每分钟，需要查询得到类型为web，按IP维度聚合并按请求数降序排序的TOP5威胁事件。
+  - 编写触发函数。根据描述可知需要对TOP5的IP进行调用接口，并对接口返回进行判断，若满足条件则触发事件返回需要记录的信息。
 
-<span class="o">-</span> <span class="nx">实现</span><span class="err">：</span>
-    <span class="c1">##### 设置查询条件：</span>
-    <span class="sb">```
+- 实现：
+    ##### 设置查询条件：
+    ```
     {
         "query": {
             "bool": {
@@ -429,9 +429,9 @@ data: {
         },
         "size": 0
     }
-    ```</span>
-    <span class="c1">##### 查询结果如下：</span>
-    <span class="sb">```
+    ```
+    ##### 查询结果如下：
+    ```
     {
      "took": 7,
      "timed_out": false,
@@ -490,30 +490,30 @@ data: {
        }
      }
    }
-    ```</span>
-    <span class="c1">##### 定义触发条件：</span>
-    <span class="sb">``</span><span class="err">`</span>
-    <span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">const</span> <span class="no">requestUrl</span> <span class="o">=</span> <span class="s2">"http://www.baishancloud.com/threatInfo?ip="</span><span class="p">;</span>
-        <span class="k">const</span> <span class="no">method</span> <span class="o">=</span> <span class="s2">"get"</span><span class="p">;</span>
-        <span class="nx">let</span> <span class="nx">topIP</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span><span class="o">.</span><span class="nx">buckets</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">topIP</span> <span class="o">=</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">aggregations</span><span class="o">.</span><span class="nx">ip_group</span><span class="o">.</span><span class="nx">buckets</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="nx">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">topIP</span><span class="o">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-           <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">requestUrl</span> <span class="o">+</span> <span class="nx">topIP</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">.</span><span class="nb">key</span><span class="p">;</span>
-           <span class="nx">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
-           <span class="nx">let</span> <span class="nx">hited</span> <span class="o">=</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span><span class="o">.</span><span class="nx">hit</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
-           <span class="nx">let</span> <span class="nx">reason</span> <span class="o">=</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="o">.</span><span class="nx">data</span><span class="o">.</span><span class="nx">reason</span> <span class="o">||</span> <span class="s1">'暂无'</span><span class="p">;</span>
-           <span class="k">if</span> <span class="p">(</span><span class="nx">hited</span><span class="p">)</span> <span class="p">{</span>
-               <span class="nx">result</span> <span class="o">+=</span> <span class="s2">"IP:"</span> <span class="o">+</span> <span class="nx">topIP</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">.</span><span class="nb">key</span> <span class="o">+</span> <span class="s2">"情报库内原因:"</span> <span class="o">+</span> <span class="nx">reason</span> <span class="o">+</span> <span class="s2">"&lt;br/&gt;"</span><span class="p">;</span>
-           <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    ```
+    ##### 定义触发条件：
+    ```
+    async function trigger(payload) {
+        const requestUrl = "http://www.baishancloud.com/threatInfo?ip=";
+        const method = "get";
+        let topIP = [];
+        let result = "";
+        if (payload.aggregations &amp;&amp; payload.aggregations.ip_group &amp;&amp; payload.aggregations.ip_group.buckets) {
+            topIP = payload.aggregations.ip_group.buckets;
+        }
+        for (let i = 0; i &lt; topIP.length; i++) {
+           let url = requestUrl + topIP[i].key;
+           let res = await fetchData(url, method);
+           let hited = res.data &amp;&amp; res.data.hit || 0;
+           let reason = res.data &amp;&amp; res.data.reason || '暂无';
+           if (hited) {
+               result += "IP:" + topIP[i].key + "情报库内原因:" + reason + "&lt;br/&gt;";
+           }
+        }
+        if (result) {
+            return result;
+        }
+    }
 </code></pre></div></div>
 
 <h2 id="qa">Q&amp;A</h2>
@@ -521,7 +521,7 @@ data: {
 <p>在触发函数编写的过程中，本产品提供了封装好的接口请求函数fetchData，该函数的返回值为请求返回值。
 请配合async/await的同步操作使用。即触发函数以async开头，接口请求函数以await开始。示例如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  fetchData(url, method, headers, body)，其中：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  fetchData(url, method, headers, body)，其中：
   url: 完整的请求地址，
   method: 请求方法，
   headers: 请求的headers，不传时默认为{ 'Content-Type': 'application/json' }，
@@ -529,25 +529,25 @@ data: {
 
 </code></pre></div></div>
 <p>对于一个带接口请求的触发函数，示例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://xxx/test"</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="s2">"get"</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
-    <span class="nx">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">"payload.hits.total="</span> <span class="o">+</span> <span class="nx">payload</span><span class="o">.</span><span class="nx">hits</span><span class="o">.</span><span class="nx">total</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="o">.</span><span class="nx">hits</span><span class="o">.</span><span class="nx">total</span> <span class="o">&gt;</span> <span class="nx">data</span><span class="o">.</span><span class="nx">total</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://xxx/test"</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="s2">"post"</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="o">:</span> <span class="s1">'application/json'</span> <span class="p">};</span>
-    <span class="nx">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="o">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">});</span>
-    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>async function trigger(payload) {
+    let url = "http://xxx/test";
+    let method = "get";
+    let data = await fetchData(url, method);
+    let result = "payload.hits.total=" + payload.hits.total;
+    if (payload.hits.total &gt; data.total) {
+        return result;
+    }
+}
+async function trigger(payload) {
+    let url = "http://xxx/test";
+    let method = "post";
+    let headers = { 'Content-Type': 'application/json' };
+    let body = JSON.stringify({a:1});
+    let data = await fetchData(url, method, headers, body);
 </code></pre></div></div>
 <h3 id="如何进行时间格式化">如何进行时间格式化？</h3>
 <p>对于触发函数中的时间格式化处理，本产品支持moment进行时间格式化。示例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var time = moment().unix();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var time = moment().unix();
 </code></pre></div></div>
 <h3 id="如何进行临时数据存储">如何进行临时数据存储？</h3>
 <p>本产品内置了临时数据存储模块CacheStorage，可供用户进行数据的临时存储，以及后续使用。</p>
@@ -555,12 +555,12 @@ data: {
 <p>该存储模块提供了三种处理数据的方法，分别为get，set，delete。请配合async/await的同步操作使用。</p>
 
 <p>CacheStorage模块的使用具体描述如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const cache_storage = new CacheStorage('event');
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const cache_storage = new CacheStorage('event');
 cache_storage.get(key);
 cache_storage.set(key, value, expire_time);
 cache_storage.delete(key);
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.get(key)，其中：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.get(key)，其中：
 参数：
   key: 数据存储的key值
 返回值：
@@ -568,7 +568,7 @@ cache_storage.delete(key);
 示例：
 let value = await cache_storage.get(key);
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.set(key, value, expire_time)，其中：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.set(key, value, expire_time)，其中：
 参数：
   key: 数据存储的key;
   value: 存储的数据，支持number，string，object，array等格式;
@@ -581,7 +581,7 @@ let value = await cache_storage.get(key);
   let expire_time = 86400; //数据保存86400秒
   await set(key, value, expire_time);
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.delete(key)，其中：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cache_storage.delete(key)，其中：
 参数：
   key: 数据存储的key值
 返回值：
@@ -590,17 +590,17 @@ let value = await cache_storage.get(key);
   await cache_storage.delete(key);
 </code></pre></div></div>
 <h3 id="如何发送邮件">如何发送邮件？</h3>
-<p>本产品提供内置的邮件发送函数<code class="highlighter-rouge">postEmail</code>，示例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function postEmail(mailData, SMTPConfig, callReady, callError)，其中：
+<p>本产品提供内置的邮件发送函数<code class="language-plaintext highlighter-rouge">postEmail</code>，示例如下：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  function postEmail(mailData, SMTPConfig, callReady, callError)，其中：
   mailData: 发送邮件内容对象，包括to、title、content属性；
   SMTPConfig: 若需要使用自己的SMTP服务器，请传入相关配置包括host、port、user、password属性，可选；
   callReady: 发送成功回调，可选；
   callError: 发送失败回调，可选；
 </code></pre></div></div>
-<p>其中<code class="highlighter-rouge">mailData</code>参数，分使用本产品提供的SMTP服务和用户自身SMTP服务两种情况进行说明：</p>
+<p>其中<code class="language-plaintext highlighter-rouge">mailData</code>参数，分使用本产品提供的SMTP服务和用户自身SMTP服务两种情况进行说明：</p>
 <ol>
   <li>使用本产品提供的SMTP，示例如下：
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
   mailData.to = xxx; //收件人邮箱地址，多个用分号分割
   mailData.title = xxx; //邮件主题
   mailData.content = xxx; //邮件内容
@@ -608,7 +608,7 @@ let value = await cache_storage.get(key);
 </code></pre></div>    </div>
   </li>
   <li>用户自身SMTP服务器，示例如下：
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let mailData = {}; //邮件信息
   mailData.to = xxx; //收件人邮箱地址，多个用分号分割
   mailData.title = xxx; //邮件主题
   mailData.content = xxx; //邮件内容
@@ -629,15 +629,15 @@ let value = await cache_storage.get(key);
 
 <p>请配合async/await的同步操作使用。即触发函数以async开头，接口请求函数以await开始。示例如下：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">xxx</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">xxx</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">esClient</span><span class="o">.</span><span class="nx">search</span><span class="p">({</span>
-      <span class="nx">index</span><span class="o">:</span> <span class="nx">index</span><span class="p">,</span>
-      <span class="nx">body</span><span class="o">:</span> <span class="nx">body</span>
-    <span class="p">});</span>
-    <span class="o">......</span><span class="nx">判断条件</span><span class="o">......</span>
-<span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>async function trigger(payload) {
+    let index = xxx;
+    let body = xxx;
+    let data = await esClient.search({
+      index: index,
+      body: body
+    });
+    ......判断条件......
+}
 </code></pre></div></div>
 <h3 id="如何进行设备调用">如何进行设备调用？</h3>
 <p>在触发函数编写的过程中，为了方便关联各种设备的数据，本产品提供了封装好的调用模块bscModule，可用于各种设备调用交互处理。bscModule模块中封装的各设备类型及文档说明，如下表所示。</p>
@@ -655,13 +655,13 @@ let value = await cache_storage.get(key);
     <tr>
       <td>f5</td>
       <td>f5IControl</td>
-      <td><code class="highlighter-rouge"> let f5IControl = bscModule.f5IControl</code></td>
+      <td>` let f5IControl = bscModule.f5IControl`</td>
       <td>https://github.com/thwi/node-icontrol</td>
     </tr>
     <tr>
       <td>radware</td>
       <td>radWare</td>
-      <td><code class="highlighter-rouge"> let radWare = bscModule.radWare</code></td>
+      <td>` let radWare = bscModule.radWare`</td>
       <td>https://webhelp.radware.com/Vision/REST/4_00_00/index.html</td>
     </tr>
   </tbody>
@@ -669,7 +669,7 @@ let value = await cache_storage.get(key);
 
 <p>具体示例：</p>
 <h4 id="f5模块使用">f5模块使用</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function trigger(payload) {
     var f5IControl = bscModule.f5IControl; //引入f5关联模块
     var bigip = new f5IControl({
       host: '192.xxx.xxx.xxx',
@@ -686,7 +686,7 @@ let value = await cache_storage.get(key);
 <h4 id="radware模块使用目前以v4为例">radware模块使用，目前以v4为例</h4>
 <p>radware模块中，提供登录函数login，以及数据交互请求函数request。
 login函数的返回值如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>登录成功：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>登录成功：
 {
   "status": "ok",
   "jsessionid": "sessionid"
@@ -699,7 +699,7 @@ login函数的返回值如下：</p>
 
 </code></pre></div></div>
 <p>request函数具体描述如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>request(path, method, opts)，其中：
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>request(path, method, opts)，其中：
   path: 请参照radware文档中各请求path，如：'/mgmt/system/user/logout'，
   method: 请求方法，
   opts: {
@@ -713,26 +713,26 @@ login函数的返回值如下：</p>
   };
 </code></pre></div></div>
 <p>具体应用实例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">function</span> <span class="nf">trigger</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nx">radWare</span> <span class="o">=</span> <span class="nx">bscModule</span><span class="o">.</span><span class="nx">radWare</span><span class="p">;</span> <span class="c1">//引入radware关联模块</span>
-    <span class="k">var</span> <span class="nx">radware</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">radWare</span><span class="p">({</span>
-      <span class="nx">host</span><span class="o">:</span> <span class="s1">'192.xxx.xxx.xxx'</span><span class="p">,</span>
-      <span class="nx">proto</span><span class="o">:</span> <span class="s1">'http'</span><span class="p">,</span> <span class="c1">//默认为http</span>
-      <span class="nx">username</span><span class="o">:</span> <span class="s1">'admin'</span><span class="p">,</span>
-      <span class="nx">password</span><span class="o">:</span> <span class="s1">'admin'</span>
-    <span class="p">});</span>
-    <span class="c1">//登录</span>
-    <span class="k">var</span> <span class="nx">login</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">radware</span><span class="o">.</span><span class="nx">login</span><span class="p">();</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">login</span><span class="o">.</span><span class="nx">status</span> <span class="o">==</span> <span class="s1">'ok'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">//进一步的数据关联交互，如获取apm设备列表</span>
-      <span class="k">var</span> <span class="nx">apm_application</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">radware</span><span class="o">.</span><span class="nx">requst</span><span class="p">(</span><span class="s1">'/mgmt/system/config/apm/application'</span><span class="p">,</span><span class="s1">'get'</span><span class="p">);</span>
-      <span class="o">......</span><span class="nx">其他api使用请参考官方文档https</span><span class="o">://</span><span class="nx">webhelp</span><span class="o">.</span><span class="nx">radware</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">Vision</span><span class="o">/</span><span class="nx">REST</span><span class="o">/</span><span class="mi">4_00_00</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">html</span><span class="o">......</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>async function trigger(payload) {
+    var radWare = bscModule.radWare; //引入radware关联模块
+    var radware = new radWare({
+      host: '192.xxx.xxx.xxx',
+      proto: 'http', //默认为http
+      username: 'admin',
+      password: 'admin'
+    });
+    //登录
+    var login = await radware.login();
+    if(login.status == 'ok') {
+      //进一步的数据关联交互，如获取apm设备列表
+      var apm_application = await radware.requst('/mgmt/system/config/apm/application','get');
+      ......其他api使用请参考官方文档https://webhelp.radware.com/Vision/REST/4_00_00/index.html......
+    }
+}
 </code></pre></div></div>
 <h3 id="如何使用javascript工具库">如何使用JavaScript工具库？</h3>
-<p>为了更方便，快捷地使用JavaScript语言进行高级模式的编写，本产品提供了内置封装的<code class="highlighter-rouge">lodash</code>JS工具模块，使用时通过<code class="highlighter-rouge">_</code>调用，简单示例如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>对象取值
+<p>为了更方便，快捷地使用JavaScript语言进行高级模式的编写，本产品提供了内置封装的<code class="language-plaintext highlighter-rouge">lodash</code>JS工具模块，使用时通过<code class="language-plaintext highlighter-rouge">_</code>调用，简单示例如下：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>对象取值
 _.get(object, path, [defaultValue])
 
 var object = { 'a': [{ 'b': { 'c': 3 } }] };
