@@ -89,14 +89,14 @@
 				<h2 id="概述">概述</h2>
 
 <blockquote>
-  <p>1、在部署完ATD之后，您需要进行日志配置操作，以便ATD可以解析您的日志，进而进行威胁分析。</p>
+  <p>1、在部署完系统之后，您需要进行日志配置操作，以便ATD可以解析您的日志，进而进行威胁分析。</p>
 </blockquote>
 
 <blockquote>
-  <p>2、ATD支持<strong>智能解析</strong>和<strong>手动解析</strong>两种方式</p>
+  <p>2、系统支持<strong>智能解析</strong>和<strong>手动解析</strong>两种方式</p>
 </blockquote>
 
-<p><strong>智能解析</strong>只需要提供原始日志，ATD系统会自动根据日志格式进行自动化匹配出符合条件的多条结果，根据匹配度自上而下排列，选择最准确的一条结果作为解析方式即可。智能解析适用于系统日志的自动化解析，目前支持的日志类型列表<a href="../智能日志解析/">在此</a></p>
+<p><strong>智能解析</strong>只需要提供原始日志，系统会自动根据日志格式进行自动化匹配出符合条件的多条结果，根据匹配度自上而下排列，选择最准确的一条结果作为解析方式即可。智能解析适用于系统日志的自动化解析，目前支持的日志类型列表<a href="../智能日志解析/">在此</a></p>
 
 <p><strong>手动解析</strong>需要提供原始日志，然后根据日志类型选择合适的规则进行递归式解析，直到解析出需要的结果为止。
 说明：由于手动解析牵涉较多，下面将重点介绍手动解析方式的流程方式。下图即是两种解析方式，默认是智能解析，只需要把原始日志填入，然后点击解析即可。</p>
@@ -105,18 +105,18 @@
   <p>3、日志对接分为三步：</p>
 </blockquote>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>（1）日志格式配置，即根据原始日志进行日志类型匹配和字段映射设置，以便ATD可以成功解析您的日志；
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>（1）日志格式配置，即根据原始日志进行日志类型匹配和字段映射设置，以便系统可以成功解析您的日志；
 
-（2）日志对接配置，即配置TopicName、Zookeeper地址等，以便ATD知道从哪里可以获取到您推送的日志；
+（2）日志对接配置，即配置TopicName、Zookeeper地址等，以便系统知道从哪里可以获取到您推送的日志；
 
-（3）推日志，在完成日志配置后，您需要将日志推送到Kafka相应的TopicName中。【注意】请勿将不同格式的域名日志推到同一个TopicName下，否则ATD将无法完成日志解析且不能进行威胁分析。
+（3）推日志，在完成日志配置后，您需要将日志推送到Kafka相应的TopicName中。【注意】请勿将不同格式的域名日志推到同一个TopicName下，否则系统将无法完成日志解析且不能进行威胁分析。
 </code></pre></div></div>
 
 <p><img src="/docs/images/log/parse10.png" alt="智能解析" /></p>
 
 <h2 id="步骤一手动解析日志配置">步骤一：手动解析日志配置</h2>
 
-<p>目前，ATD支持四种日志类型：</p>
+<p>目前，系统支持四种日志类型：</p>
 
 <p>1、logformat</p>
 
@@ -314,7 +314,7 @@
 
 <h2 id="步骤二日志对接配置">步骤二：日志对接配置</h2>
 <blockquote>
-  <p>在成功完成日志格式配置后，您可以对某个日志格式进行对接配置，选择使用ATD的Kafka或是您私有的Kafka，在选择了您私有的Kafka后，您需要设置TopicName、Zookeeper地址或Kafka地址。</p>
+  <p>在成功完成日志格式配置后，您可以对某个日志格式进行对接配置，选择使用系统的Kafka或是您私有的Kafka，在选择了您私有的Kafka后，您需要设置TopicName、Zookeeper地址或Kafka地址。</p>
 </blockquote>
 
 <h2 id="步骤三推日志">步骤三：推日志</h2>
@@ -325,7 +325,7 @@
 </blockquote>
 
 <h3 id="四种推日志方式介绍">四种推日志方式介绍</h3>
-<p>ATD支持多种给Kafka推送日志的方式，每种方式有推荐使用场景，以下是几种推送方式优缺点介绍：</p>
+<p>系统支持多种给Kafka推送日志的方式，每种方式有推荐使用场景，以下是几种推送方式优缺点介绍：</p>
 <h4 id="1优先推荐kafkacat推送方式">1、优先推荐Kafkacat推送方式</h4>
 <h5 id="优势">优势：</h5>
 <p>由C语言开发，资源消耗少。</p>
